@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { footerLogo } from "../../assets";
+import { enterEmail, footerLogo } from "../../assets";
 import "./footer.css";
 
 const Footer = () => {
@@ -27,11 +27,28 @@ const Footer = () => {
             <p className="footer-contact-address">+254 712 345 678</p>
           </div>
         </div>
-        <div className="footer-newsletter">Newsletter</div>
+
+        <div className="footer-newsletter">
+          <h4 className="footer-contact-header">Newsletter</h4>
+          <p className="footer-newsletter-desc">
+            Subscribe our newsletter to get more free design course and
+            resource.
+          </p>
+          <div className="footer-newsletter-email-wrapper">
+            <input
+              type="text"
+              placeholder="Enter your email"
+              className="footer-newsletter-email"
+            />
+            <img src={enterEmail} alt="send" className="newsletter-btn" />
+          </div>
+        </div>
       </div>
 
       <div className="footer-copyright-social-links">
-        <div className="footer-copyright">Copyright</div>
+        <div className="footer-copyright">
+          Copyright © 2023 FitTrackr LLC. All rights reserved
+        </div>
         <div className="footer-social-links">Copyright</div>
       </div>
     </footer>
