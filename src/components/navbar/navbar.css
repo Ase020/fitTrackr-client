@@ -1,0 +1,28 @@
+.navbar-container {
+  max-width: 1120px;
+  border: 1px solid red;
+  margin: 0 auto;
+  padding: 16px 0;
+}
+
+.navbar-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.navbar-logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.navbar-logo-name {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.navbar-logo-subname {
+  font-weight: 400;
+}
