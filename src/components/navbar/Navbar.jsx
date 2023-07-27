@@ -23,8 +23,8 @@ const Navbar = () => {
 
       {/* login */}
       <div className="logon-options">
-        <button className="">Login</button>
-        <button className="">Login</button>
+        <button className="logon-btn login-option">Log In</button>
+        <button className="logon-btn signup-option">Sign Up</button>
       </div>
     </header>
   );
