@@ -12,6 +12,20 @@ const Navbar = () => {
           Fit<span className="navbar-logo-subname">Trackr</span>
         </h4>
       </Link>
+
+      {/* navlinks */}
+      <nav className="navbar-links">
+        <Link to="/">Home</Link>
+        <Link to="/workouts">Workouts</Link>
+        <Link to="/membership">Membership</Link>
+        <Link to="/contact">Contact Us</Link>
+      </nav>
+
+      {/* login */}
+      <div className="logon-options">
+        <button className="">Login</button>
+        <button className="">Login</button>
+      </div>
     </header>
   );
 };
