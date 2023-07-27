@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
-import { enterEmail, footerLogo } from "../../assets";
+import {
+  dribbble,
+  enterEmail,
+  facebook,
+  footerLogo,
+  instagram,
+  twitter,
+} from "../../assets";
 import "./footer.css";
 
 const Footer = () => {
@@ -49,7 +56,24 @@ const Footer = () => {
         <div className="footer-copyright">
           Copyright © 2023 FitTrackr LLC. All rights reserved
         </div>
-        <div className="footer-social-links">Copyright</div>
+        <div className="footer-social-links">
+          <Link to="/">
+            <img src={facebook} alt="facebook" className="footer-social-link" />
+          </Link>
+          <Link to="/">
+            <img src={twitter} alt="twitter" className="footer-social-link" />
+          </Link>
+          <Link to="/">
+            <img
+              src={instagram}
+              alt="instagram"
+              className="footer-social-link"
+            />
+          </Link>
+          <Link to="/">
+            <img src={dribbble} alt="dribbble" className="footer-social-link" />
+          </Link>
+        </div>
       </div>
     </footer>
   );

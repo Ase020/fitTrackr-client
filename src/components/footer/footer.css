@@ -1,8 +1,4 @@
 .footer-container {
-  border: 1px solid red;
-  max-width: 1120px;
-  margin: 0 auto;
-
   display: flex;
   flex-direction: column;
   padding: 24px 0;
@@ -104,11 +100,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid blue;
 }
 
 .footer-copyright {
   color: #777e90;
   font-size: 14px;
   line-height: 26px;
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.footer-social-link {
+  width: 24px;
+  height: 24px;
 }
