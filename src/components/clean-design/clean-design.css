@@ -1,0 +1,38 @@
+.clean_design-container {
+  padding: 120px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  border: 1px solid bisque;
+}
+
+.clean_design-intro {
+  border: 1px solid bisque;
+  display: flex;
+  justify-content: space-between;
+}
+
+.clean_design-logo {
+  flex: 1;
+  font-size: 16px;
+  color: #b1b5c3;
+  font-weight: bold;
+}
+
+.clean_design-desc {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.clean_design-header {
+  font-size: 48px;
+  line-height: 56px;
+}
+
+.clean_design-body {
+  font-size: 16px;
+  line-height: 24px;
+  color: #777e90;
+}
