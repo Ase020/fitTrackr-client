@@ -1,17 +1,18 @@
+/* eslint-disable react/prop-types */
+import { waterBottle, weightPlate } from "../../assets";
+import { design } from "../../constants";
 import "./clean-design.css";
 
-const Design = () => {
+const Design = ({ design }) => {
+  const { id, title, desc, bgColor } = design;
   return (
     <div className="design_component">
-      <p className="design_component-number">01</p>
+      <p className="design_component-number" style={{ background: bgColor }}>
+        {id}
+      </p>
       <div className="design_component-desc">
-        <h5 className="design_component-desc-header">
-          Intuitive and clean design
-        </h5>
-        <p className="design_component-desc-body">
-          Track your workouts, get better results, and be the best version of
-          you.
-        </p>
+        <h5 className="design_component-desc-header">{title}</h5>
+        <p className="design_component-desc-body">{desc}</p>
       </div>
     </div>
   );
@@ -37,11 +38,22 @@ const CleanDesign = () => {
       </div>
       <div className="clean_design-design">
         <div className="design_desc-wrapper">
-          <Design />
-          <Design />
-          <Design />
+          {design.map((design) => (
+            <Design key={design.id} design={design} />
+          ))}
         </div>
-        <div className="design_img-wrapper">img wrapper</div>
+        <div className="design_img-wrapper">
+          <img
+            src={waterBottle}
+            alt="water-bottle"
+            className="design_img-water_bottle"
+          />
+          <img
+            src={weightPlate}
+            alt="weight-plate"
+            className="design_img-weight"
+          />
+        </div>
       </div>
     </section>
   );

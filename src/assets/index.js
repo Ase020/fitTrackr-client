@@ -10,6 +10,8 @@ import nike from "./nike.png";
 import apple from "./apple.png";
 import nb from "./nb.png";
 import espirit from "./espirit.png";
+import waterBottle from "./water-bottle.png";
+import weightPlate from "./weight-plate-dark.png";
 
 export {
   logo,
@@ -24,4 +26,6 @@ export {
   apple,
   nb,
   espirit,
+  waterBottle,
+  weightPlate,
 };

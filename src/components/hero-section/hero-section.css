@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   gap: 48px;
+  margin-top: 24px;
 }
 
 .hero_section-intro {
@@ -69,59 +70,4 @@
   right: 0;
   height: 100%;
   object-fit: cover;
-}
-
-.clean_design-design {
-  border: 1px solid green;
-  display: flex;
-  justify-content: space-between;
-  gap: 80px;
-}
-
-.design_desc-wrapper {
-  border: 1px solid blueviolet;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-}
-
-.design_component {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.design_component-number {
-  padding: 2px 10px;
-  background: #9757d7;
-  width: 38px;
-  height: 24px;
-  font-size: 14px;
-  border-radius: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.design_component-desc {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.design_component-desc-header {
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.design_component-desc-body {
-  font-size: 14px;
-  line-height: 24px;
-  color: #777e90;
-}
-
-.design_img-wrapper {
-  border: 1px solid yellow;
-  flex: 2.5;
 }

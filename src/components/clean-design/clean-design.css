@@ -1,5 +1,5 @@
 .clean_design-container {
-  padding: 120px 0;
+  padding: 80px 0;
   display: flex;
   flex-direction: column;
   gap: 80px;
@@ -7,7 +7,6 @@
 }
 
 .clean_design-intro {
-  border: 1px solid bisque;
   display: flex;
   justify-content: space-between;
 }
@@ -35,4 +34,69 @@
   font-size: 16px;
   line-height: 24px;
   color: #777e90;
+}
+
+.clean_design-design {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.design_desc-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.design_component {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.design_component-number {
+  padding: 2px 10px;
+  width: 38px;
+  height: 24px;
+  font-size: 14px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.design_component-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.design_component-desc-header {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.design_component-desc-body {
+  font-size: 14px;
+  line-height: 24px;
+  color: #777e90;
+}
+
+.design_img-wrapper {
+  flex: 2.5;
+  position: relative;
+  display: flex;
+  justify-content: end;
+}
+
+.design_img-water-bottle {
+  object-fit: cover;
+}
+
+.design_img-weight {
+  position: absolute;
+  top: 0;
+  left: 24px;
+  object-fit: cover;
 }
