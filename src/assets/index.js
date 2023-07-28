@@ -5,5 +5,27 @@ import facebook from "./facebook.png";
 import twitter from "./twitter.png";
 import instagram from "./instagram.png";
 import dribbble from "./dribbble.png";
+import heroImg from "./hero-img.png";
+import nike from "./nike.png";
+import apple from "./apple.png";
+import nb from "./nb.png";
+import espirit from "./espirit.png";
+import waterBottle from "./water-bottle.png";
+import weightPlate from "./weight-plate-dark.png";
 
-export { logo, footerLogo, enterEmail, facebook, twitter, instagram, dribbble };
+export {
+  logo,
+  footerLogo,
+  enterEmail,
+  facebook,
+  twitter,
+  instagram,
+  dribbble,
+  heroImg,
+  nike,
+  apple,
+  nb,
+  espirit,
+  waterBottle,
+  weightPlate,
+};
