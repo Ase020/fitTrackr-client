@@ -48,5 +48,40 @@
 }
 
 .exercise_details-wrapper {
+  border: 1px solid #78ce91;
   flex: 1;
+  padding-left: 48px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exercise_details-header {
+  font-size: 32px;
+}
+
+.exercise_details-section {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.exercise-detail-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.exercise-detail-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.title-img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
 }

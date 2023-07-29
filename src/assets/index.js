@@ -13,6 +13,9 @@ import espirit from "./espirit.png";
 import waterBottle from "./water-bottle.png";
 import weightPlate from "./weight-plate-dark.png";
 import exerciseGif from "./exercise.gif";
+import bodyPart from "./body_part.svg";
+import exerciseDesc from "./description.svg";
+import equipment from "./equipment.svg";
 
 export {
   logo,
@@ -30,4 +33,7 @@ export {
   waterBottle,
   weightPlate,
   exerciseGif,
+  bodyPart,
+  exerciseDesc,
+  equipment,
 };

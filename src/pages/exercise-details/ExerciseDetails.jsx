@@ -1,4 +1,4 @@
-import { exerciseGif } from "../../assets";
+import { bodyPart, equipment, exerciseGif } from "../../assets";
 import "./exercise-details.css";
 
 const ExerciseDetails = () => {
@@ -17,7 +17,37 @@ const ExerciseDetails = () => {
           <button className="exercise_details-btn">Workout</button>
         </div>
 
-        <div className="exercise_details-wrapper">wrapper</div>
+        <div className="exercise_details-wrapper">
+          <h6 className="exercise_details-header">Exercise Details</h6>
+
+          <div className="exercise_details-section">
+            <div className="exercise-detail-wrapper">
+              <div className="exercise-detail-title">
+                <img src={equipment} alt="equipment" className="title-img" />
+                <p className="title-name">Equipment</p>
+              </div>
+              <div className="exercise-detail-title">
+                Smith Machine Smith Machine
+              </div>
+            </div>
+
+            <div className="exercise-detail-wrapper">
+              <div className="exercise-detail-title">
+                <img src={bodyPart} alt="equipment" className="title-img" />
+                <p className="title-name">Equipment</p>
+              </div>
+              <div className="exercise-detail-title">Smith Machine</div>
+            </div>
+
+            <div className="exercise-detail-wrapper">
+              <div className="exercise-detail-title">
+                <img src={equipment} alt="equipment" className="title-img" />
+                <p className="title-name">Equipment</p>
+              </div>
+              <div className="exercise-detail-title">Smith Machine</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
