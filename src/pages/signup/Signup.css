@@ -1,32 +1,150 @@
 .signup-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 80px 0;
-  background: #58a2bd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+    background: #58a2bd;
 }
 
 .signup-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
 }
 
 .image-container {
-  border: 1px solid blue;
-  flex: 0.8;
+    border: 1px solid blue;
+    flex: 1;
 }
 
 .signup-image-container-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .form-container {
-  flex: 1;
+    flex: 1;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding-left: 20px;
 }
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+
+label {
+    font-weight: bold;
+}
+
+h2 {
+    color: var(--neutral-100, #E7EBEC);
+    font-family: Inter;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 145.023%;
+}
+
+input {
+    display: flex;
+    width: 272px;
+    padding: 6px 120px 6px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--neutral-400, #969ea0);
+}
+
+button {
+    color: #78ce91;
+    background-color: #0e3848;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 145.023%;
+    display: flex;
+    justify-content: center;
+    padding: 5px 110px;
+    align-items: center;
+    gap: 24px;
+    border-radius: 7px;
+    border: 1px solid var(--signup-color, #78ce91);
+}
+
+button:hover {
+    color: #fff;
+    background-color: #28bb7b;
+    cursor: pointer;
+    border-color: #fff;
+}
+
+.google-signup {
+    display: flex;
+    padding: 6px 110px;
+    border-radius: 12px;
+    border: 1px solid var(--neutral-400, #28bb7b);
+    background-color: #0e3848;
+}
+
+.google-signup, p {
+    color: var(--neutral-100, #E7EBEC);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 145.023%;
+}
+
+.login {
+    color: #066112;
+}
+
+.login:hover {
+    color: rgb(0, 247, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 .image-container {

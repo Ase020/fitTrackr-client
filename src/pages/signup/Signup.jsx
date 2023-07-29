@@ -35,10 +35,10 @@ const Signup = () => {
             </div>
             <button type="submit">Signup</button>
           </form>
-          <div className="or-divider">
-            <hr />
-            <p>or</p>
-          </div>
+            <div className="or-divider">
+              <hr />
+                <p>or</p>
+            </div>
           <div className="google-signup">
             <p>Google</p>
             {/* not forgetting the google identity */}
