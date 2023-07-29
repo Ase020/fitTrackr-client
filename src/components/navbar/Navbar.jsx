@@ -16,7 +16,7 @@ const Navbar = () => {
       {/* navlinks */}
       <nav className="navbar-links">
         <Link to="/">Home</Link>
-        <Link to="/workouts">Workouts</Link>
+        <Link to="/exercises">Exercises</Link>
         <Link to="/membership">Membership</Link>
         <Link to="/contact">Contact Us</Link>
       </nav>

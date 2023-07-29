@@ -9,6 +9,7 @@ import {
   Signup,
   PasswordReset,
   Membership,
+  Exercises,
 } from "./pages";
 
 const App = () => {
@@ -28,6 +29,10 @@ const App = () => {
         {
           path: "/signup",
           element: <Signup />,
+        },
+        {
+          path: "/exercises",
+          element: <Exercises />,
         },
         {
           path: "/membership",
