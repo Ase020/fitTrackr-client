@@ -48,7 +48,6 @@
 }
 
 .exercise_details-wrapper {
-  border: 1px solid #78ce91;
   flex: 1;
   padding-left: 48px;
 
@@ -62,7 +61,6 @@
 }
 
 .exercise_details-section {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -70,18 +68,32 @@
 
 .exercise-detail-wrapper {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 40px;
 }
 
 .exercise-detail-title {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
+  flex: 1;
 }
 
 .title-img {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   object-fit: cover;
+}
+
+.title-name {
+  color: #969ea0;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.exercise-detail-desc {
+  flex: 2.5;
+  font-weight: 300;
+  line-height: 24px;
+  font-size: 16px;
 }
