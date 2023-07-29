@@ -8,12 +8,12 @@ import dribbble from "./dribbble.png";
 import signUp from "./signup-image.png";
 
 export {
-  logo,
-  footerLogo,
-  enterEmail,
-  facebook,
-  twitter,
-  instagram,
-  dribbble,
-  signUp,
+    logo,
+    footerLogo,
+    enterEmail,
+    facebook,
+    twitter,
+    instagram,
+    dribbble,
+    signUp,
 };

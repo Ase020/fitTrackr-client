@@ -15,7 +15,7 @@
 
 .image-container {
   border: 1px solid blue;
-  flex: 1;
+  flex: 0.8;
 }
 
 .signup-image-container-image {
