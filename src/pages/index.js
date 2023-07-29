@@ -5,5 +5,15 @@ import { default as Signup } from "./signup/Signup";
 import { default as PasswordReset } from "./password-reset/PasswordReset";
 import { default as Membership } from "./membership/Membership";
 import { default as Exercises } from "./exercises/Exercises";
+import { default as ExerciseDetails } from "./exercise-details/ExerciseDetails";
 
-export { Home, Layout, Login, Signup, PasswordReset, Membership, Exercises };
+export {
+  Home,
+  Layout,
+  Login,
+  Signup,
+  PasswordReset,
+  Membership,
+  Exercises,
+  ExerciseDetails,
+};
