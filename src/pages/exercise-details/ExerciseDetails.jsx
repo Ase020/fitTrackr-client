@@ -1,6 +1,10 @@
 import { bodyPart, equipment, exerciseDesc, exerciseGif } from "../../assets";
 import "./exercise-details.css";
 
+const RelatedExercise = () => (
+  <div className="related_exercise-wrapper">related</div>
+);
+
 const ExerciseDetails = () => {
   return (
     <div className="exercise_details-container">
@@ -54,6 +58,70 @@ const ExerciseDetails = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Exercise target */}
+      <div className="exercise_target_set-container">
+        <p className="exercise_target-header">Set your target</p>
+
+        <form className="exercise_target-form">
+          <label className="set_taget-label">Reps</label>
+          <input
+            type="number"
+            min={0}
+            placeholder="reps"
+            className="set_target-input"
+          />
+
+          <label className="set_taget-label">Duration(minutes)</label>
+          <input
+            type="number"
+            min={0}
+            placeholder="10 minutes"
+            className="set_target-input"
+          />
+
+          <button type="submit" className="set_target-btn">
+            Start
+          </button>
+        </form>
+      </div>
+
+      {/* Exercise stats */}
+      <div className="exercise_target_set-container">
+        <p className="exercise_target-header">How many have you achieved?</p>
+
+        <form className="exercise_target-form">
+          <label className="set_taget-label">Reps</label>
+          <input
+            type="number"
+            min={0}
+            placeholder="reps"
+            className="set_target-input"
+          />
+
+          <label className="set_taget-label">Duration(minutes)</label>
+          <input
+            type="number"
+            min={0}
+            placeholder="10 minutes"
+            className="set_target-input"
+          />
+
+          <button type="submit" className="set_target-btn">
+            Finish
+          </button>
+        </form>
+      </div>
+
+      {/* related exercises */}
+      <div className="related_exercises-container">
+        <p className="related_exercises-header">You may also like</p>
+        <div className="related_exercises-array">
+          <RelatedExercise />
+          <RelatedExercise />
+          <RelatedExercise />
         </div>
       </div>
     </div>

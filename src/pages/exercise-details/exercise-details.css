@@ -97,3 +97,60 @@
   line-height: 24px;
   font-size: 16px;
 }
+
+/* exercise target */
+.exercise_target_set-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  border: #969ea0 1px solid;
+  border-radius: 12px;
+  width: 50%;
+  padding: 16px;
+}
+
+.exercise_target-header {
+  font-size: 32px;
+}
+
+.exercise_target-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.set_taget-label {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.set_target-input {
+  border: none;
+  outline: none;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.set_target-btn {
+  border: 1px solid #007bff;
+  background: transparent;
+  color: #007bff;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+}
+
+.set_target-btn:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+.related_exercises-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
