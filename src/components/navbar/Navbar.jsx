@@ -39,10 +39,18 @@ const Navbar = () => {
           />
           {profile && (
             <div className="user_profile-container">
-              <Link className="user_profile-link" to="/profile">
+              <Link
+                className="user_profile-link"
+                onClick={() => setProfile((prev) => !prev)}
+                to="/profile"
+              >
                 My profile
               </Link>
-              <Link className="user_profile-link" to="/dashboard">
+              <Link
+                className="user_profile-link"
+                onClick={() => setProfile((prev) => !prev)}
+                to="/dashboard"
+              >
                 Dashboard
               </Link>
               <button className="user_profile-btn">Logout</button>
