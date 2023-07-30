@@ -10,6 +10,7 @@ import {
   PasswordReset,
   Membership,
   Exercises,
+  ExerciseDetails,
 } from "./pages";
 
 const App = () => {
@@ -33,6 +34,10 @@ const App = () => {
         {
           path: "/exercises",
           element: <Exercises />,
+        },
+        {
+          path: "/exercises/:id",
+          element: <ExerciseDetails />,
         },
         {
           path: "/membership",
