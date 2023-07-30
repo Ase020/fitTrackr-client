@@ -1,6 +1,4 @@
 .exercise_details-container {
-  border: 1px solid saddlebrown;
-
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -105,7 +103,6 @@
   gap: 16px;
   align-items: center;
   justify-content: center;
-  border: #969ea0 1px solid;
   border-radius: 12px;
   width: 50%;
   padding: 16px;
@@ -153,4 +150,47 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: 16px;
+}
+
+.related_exercises-header {
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.related_exercises-array {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.related_exercise-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 32px;
+  border-bottom: 2px solid #f48c7c;
+}
+
+.related_exercise-img_wrapper {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.relatd_exercise-name-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.related_exercise-title {
+  font-size: 24px;
+}
+
+.body_part_equipment-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
