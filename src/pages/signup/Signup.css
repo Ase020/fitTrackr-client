@@ -1,190 +1,77 @@
 .signup-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 80px 0;
-    background: #58a2bd;
+  display: flex;
+  justify-content: center;
+  padding: 80px;
+  position: relative;
+}
+
+.signup-container::before,
+.signup-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50%; 
+  height: 100%;
+}
+
+.signup-container::before {
+  left: 0;
+  background-color: #58a2bd;
+}
+
+.signup-container::after {
+  right: 0;
+  background-color: #346D87; 
 }
 
 .signup-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid red;
+  position: relative;
+  z-index: 1;
+}
+
+.signup-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+  border-radius: 24px;
+  position: relative; 
+}
+
+.signup-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%; 
+  height: 100%;
+  background-color: #0e3848; 
+  border-radius: 0 24px 24px 0; 
+  z-index: -1;
 }
 
 .image-container {
-    border: 1px solid blue;
-    flex: 1;
+  /* border: 1px solid blue; */
+  border-radius: 24px 0px 0px 24px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .signup-image-container-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .form-container {
-    flex: 1;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
-    padding-left: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 20px;
-}
-
-
-label {
-    font-weight: bold;
-}
-
-h2 {
-    color: var(--neutral-100, #E7EBEC);
-    font-family: Inter;
-    font-size: 56px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 145.023%;
-}
-
-input {
-    display: flex;
-    width: 272px;
-    padding: 6px 120px 6px 12px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 8px;
-    border: 1px solid var(--neutral-400, #969ea0);
-}
-
-button {
-    color: #78ce91;
-    background-color: #0e3848;
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 145.023%;
-    display: flex;
-    justify-content: center;
-    padding: 5px 110px;
-    align-items: center;
-    gap: 24px;
-    border-radius: 7px;
-    border: 1px solid var(--signup-color, #78ce91);
-}
-
-button:hover {
-    color: #fff;
-    background-color: #28bb7b;
-    cursor: pointer;
-    border-color: #fff;
-}
-
-.google-signup {
-    display: flex;
-    padding: 6px 110px;
-    border-radius: 12px;
-    border: 1px solid var(--neutral-400, #28bb7b);
-    background-color: #0e3848;
-}
-
-.google-signup, p {
-    color: var(--neutral-100, #E7EBEC);
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 145.023%;
-}
-
-.login {
-    color: #066112;
-}
-
-.login:hover {
-    color: rgb(0, 247, 0);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-.image-container {
-  width: 375px;
-  height: 456px;
-  flex-shrink: 0;
-  display: inline-flex;
-  flex-direction: column-reverse;
-  align-items: flex-end;
-  border-radius: 24px 0px 0px 24px;
-  border-top: 2px solid var(--primary-700, #0e3848);
-  border-bottom: 2px solid var(--primary-700, #0e3848);
-  border-left: 2px solid var(--primary-700, #0e3848);
-  background: url("../../assets/signup image.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.form-container {
-  width: 375px;
-  height: 456px;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border-radius: 0px 24px 24px 0px;
-  background: var(--primary-700, #0a2631);
-}
-
-h2 {
-  color: var(--neutral-100, #e7ebec);
-  font-family: Inter;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 145.023%;
-}
-
-form {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  padding-left: 30px;
 }
 
 .form-group {
@@ -195,8 +82,18 @@ form {
   margin-bottom: 20px;
 }
 
+
 label {
   font-weight: bold;
+}
+
+h2 {
+  color: var(--neutral-100, #E7EBEC);
+  font-family: Inter;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 145.023%;
 }
 
 input {
@@ -219,8 +116,8 @@ button {
   font-weight: 400;
   line-height: 145.023%;
   display: flex;
-  padding: 8px 107px;
   justify-content: center;
+  padding: 5px 110px;
   align-items: center;
   gap: 24px;
   border-radius: 7px;
@@ -228,49 +125,62 @@ button {
 }
 
 button:hover {
+  color: #fff;
+  background-color: #28bb7b;
   cursor: pointer;
-  color: #0e3848;
-  background-color: #007bff;
-  border-color: #051a23;
+  border-color: #fff;
 }
 
-.or-divider {
-  display: flex;
-  align-items: center;
+#or {
+  position: relative;
+  width: 270px;
+  height: 12px;
+  top: 5px;
+  line-height: 2.5px;
+  text-align: center;
 }
 
-.or-divider hr {
-  flex-grow: 1;
-  height: 1px;
-  background-color: #ccc;
-  margin: 0;
+#or::before,
+#or::after {
+  position: absolute;
+  width: 118px;
+  height: 3px;
+  background-color: #aaa;
+  content: '';
+}
+
+#or::before {
+  left: 0;
+}
+
+#or::after {
+  right: 0;
 }
 
 .google-signup {
   display: flex;
-  padding: 8px 24px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  padding: 6px 100px;
+  cursor: pointer;
+  background-color: #0e3848;
   border-radius: 12px;
-  border: 1px solid var(--neutral-400, #969ea0);
+  border: 1px solid var(--neutral-400, #28bb7b);/*not sure abut this*/
+
 }
 
-.google-signup p {
-  display: flex;
-  padding: 8px 24px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+.google-signup p:first-of-type {
+  font-size: 16px;
+  font-style: normal;
+  line-height: 145.023%;
+}
+
+.google-icon {  
+  padding: 2px;  
 }
 
 .login {
-  color: #007bff;
-  text-decoration: none;
+    color: #007BFF;
 }
 
 .login:hover {
-  color: #78ce91;
-} */
+    color: rgb(4, 135, 30);
+}
