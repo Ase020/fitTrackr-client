@@ -6,6 +6,7 @@ import twitter from "./twitter.png";
 import instagram from "./instagram.png";
 import dribbble from "./dribbble.png";
 import signUp from "./signup-image.png";
+import googleIcon from "./google-icon.svg";
 
 export {
     logo,
@@ -16,4 +17,5 @@ export {
     instagram,
     dribbble,
     signUp,
+    googleIcon
 };
