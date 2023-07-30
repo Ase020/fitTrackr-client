@@ -11,6 +11,8 @@ import {
   Membership,
   Exercises,
   ExerciseDetails,
+  Dashboard,
+  Profile,
 } from "./pages";
 
 const App = () => {
@@ -42,6 +44,14 @@ const App = () => {
         {
           path: "/membership",
           element: <Membership />,
+        },
+        {
+          path: "/dashboard",
+          element: <Dashboard />,
+        },
+        {
+          path: "/profile",
+          element: <Profile />,
         },
         {
           path: "/login/password_reset",

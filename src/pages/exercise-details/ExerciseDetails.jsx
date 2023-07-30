@@ -15,7 +15,7 @@ const RelatedExercise = () => (
 
         <div className="body_part-wrapper">
           <p className="exercise_body_part-header">
-            Body part: <span className="body_part-data">Waist</span>
+            Equipment: <span className="body_part-data">Leverage machine</span>
           </p>
         </div>
       </div>
