@@ -58,7 +58,7 @@ const Signup = () => {
             />
             <p>Google</p>
           </div>
-          <p>
+          <p className="have-account">
             Already have an account?{" "}
             <a className="login" href="/login">
               Login
