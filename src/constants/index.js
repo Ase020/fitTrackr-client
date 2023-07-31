@@ -19,7 +19,7 @@ export const design = [
   },
 ];
 
-export const lineData = [
+export const weightData = [
   {
     id: "Weight",
     color: "hsl(1, 70%, 50%)",
@@ -63,6 +63,55 @@ export const lineData = [
       {
         x: "10-07",
         y: 50,
+      },
+    ],
+  },
+];
+
+export const bmiData = [
+  {
+    id: "BMI",
+    color: "hsl(1, 70%, 50%)",
+    data: [
+      {
+        x: "01-07",
+        y: 18.56,
+      },
+      {
+        x: "02-07",
+        y: 19.2,
+      },
+      {
+        x: "03-07",
+        y: 21.21,
+      },
+      {
+        x: "04-07",
+        y: 20.0,
+      },
+      {
+        x: "05-07",
+        y: 19.86,
+      },
+      {
+        x: "06-07",
+        y: 19.7,
+      },
+      {
+        x: "07-07",
+        y: 20.05,
+      },
+      {
+        x: "08-07",
+        y: 20.35,
+      },
+      {
+        x: "09-07",
+        y: 20.5,
+      },
+      {
+        x: "10-07",
+        y: 20,
       },
     ],
   },

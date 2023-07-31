@@ -1,13 +1,7 @@
+/* eslint-disable react/prop-types */
 import { ResponsiveLine } from "@nivo/line";
 
-import { lineData as data } from "../../constants";
-// make sure parent container have a defined height when using
-// responsive component, otherwise height will be 0 and
-// no chart will be rendered.
-// website examples showcase many properties,
-// you'll often use just a few of them.
-
-const LineChart = () => (
+const LineChart = ({ data }) => (
   <ResponsiveLine
     data={data}
     theme={{
@@ -62,7 +56,7 @@ const LineChart = () => (
       tickSize: 5,
       tickPadding: 5,
       tickRotation: 0,
-      legend: "Date",
+      legend: "BMI",
       legendOffset: 36,
       legendPosition: "middle",
     }}

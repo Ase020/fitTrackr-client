@@ -1,7 +1,7 @@
-const ProgressCircle = () => {
-  const progress = 0.75;
+/* eslint-disable react/prop-types */
+const ProgressCircle = ({ progress }) => {
   const size = 24;
-  const angle = progress * 360;
+  const angle = (progress / 100) * 360;
   return (
     <div
       style={{
