@@ -10,7 +10,7 @@
     content: "";
     position: absolute;
     top: 0;
-    width: 51.53%; 
+    width: 51.43%; 
     height: 100%;
 }
 
@@ -49,7 +49,7 @@
     z-index: -1;
 }
 
-.image-container {
+.image-container-wrapper {
     border-radius: 24px 0px 0px 24px;
     flex: 1;
     display: flex;
@@ -63,7 +63,7 @@
     object-fit: contain;
 }
 
-.form-container {
+.form-for-container {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -72,7 +72,7 @@
     padding-left: 30px;
 }
 
-.form-group {
+.forms-group {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -84,7 +84,7 @@ label {
     font-weight: bold;
 }
 
-.form-container h2:first-of-type {
+.form-for-container h2:first-of-type {
     color: var(--neutral-100, #E7EBEC);
     font-size: 48px;
     font-style: normal;
@@ -92,40 +92,42 @@ label {
     line-height: 145.023%;
 }
 
-input {
+.this-input {
     display: flex;
-    width: 272px;
-    padding: 6px 120px 6px 12px;
+    width: 100%;
+    padding: 6px 12px;
     justify-content: center;
     align-items: center;
-    gap: 10px;
     background-color: #0e3848;
+    transition: background-color 0.4s ease-in-out;
     border-radius: 8px;
     border: 1px solid var(--neutral-400, #969ea0);
+    box-sizing: border-box;
 }
 
-input:focus {
+.this-input:focus,
+.this-input:not(:placeholder-shown) {
     background-color: #fff;
 }
 
-button {
+
+.submit-button {
     color: #78ce91;
     background-color: #0e3848;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 145.023%;
     display: flex;
     justify-content: center;
-    padding: 5px 110px;
+    padding: 5px 114px;
     align-items: center;
     gap: 24px;
     border-radius: 7px;
     border: 1px solid var(--signup-color, #78ce91);
 }
 
-button:hover {
+.submit-button:hover {
     color: #fff;
     background-color: #28bb7b;
     transition: all 0.5s ease-in;
@@ -138,15 +140,15 @@ button:hover {
     width: 270px;
     height: 12px;
     top: 5px;
-    line-height: 2.5px;
+    line-height: 1px;
     text-align: center;
 }
 
 #or::before,
 #or::after {
     position: absolute;
-    width: 118px;
-    height: 2px;
+    width: 120px;
+    height: 1px;
     background-color: #aaa;
     content: '';
 }
@@ -166,7 +168,6 @@ button:hover {
     background-color: #0e3848;
     border-radius: 12px;
     border: 2px solid var(--neutral-400, #969EA0);/*not sure abut this*/
-
 }
 
 .google-signup p:first-of-type {

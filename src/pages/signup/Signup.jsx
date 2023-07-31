@@ -6,30 +6,31 @@ const Signup = () => {
   return (
     <div className="signup-container">
       <div className="signup-wrapper">
-        <div className="image-container">
+        <div className="image-container-wrapper">
           <img
             src={signUp}
             alt="Signup-image"
             className="signup-image-container-image"
           />
         </div>
-
-        <div className="form-container">
+        <div className="form-for-container">
           <h2>Sign up</h2>
           <form>
-            <div className="form-group">
+            <div className="forms-group">
               <label htmlFor="email">Email Address</label>
               <input
+                className="this-input"
                 type="email"
                 id="email"
                 name="email"
-                placeholder="jdoe123@example.com"
+                placeholder="jondoe123@example.com"
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="forms-group">
               <label htmlFor="password">Password</label>
               <input
+                className="this-input"
                 type="password"
                 id="password"
                 name="password"
@@ -37,9 +38,10 @@ const Signup = () => {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="forms-group">
               <label htmlFor="confirmPassword">Confirm Password</label>
               <input
+                className="this-input"
                 type="password"
                 id="confirmPassword"
                 name="confirmPassword"
@@ -47,7 +49,7 @@ const Signup = () => {
                 required
               />
             </div>
-            <button type="submit">Signup</button>
+            <button className="submit-button" type="submit">Signup</button>
           </form>
           <div id="or">or</div>
           <div className="google-signup">
