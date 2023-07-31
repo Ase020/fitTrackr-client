@@ -2,12 +2,15 @@
 import LineChart from "../lineChart/LineChart";
 import "./lineChartContainer.css";
 
-const LineChartContainer = ({ data }) => {
+const LineChartContainer = ({ data, parameter, paramValue }) => {
   return (
     <div className="bmi_container">
       <div className="bmi_header-container">
-        <h5 className="bmi_header">BMI</h5>
-        <p className="bmi_body">20.04</p>
+        <h5 className="bmi_header">{parameter}</h5>
+        <p className="bmi_body">
+          {paramValue}
+          {parameter === "Weight" ? "kgs" : ""}
+        </p>
       </div>
       <div className="graph_box">
         <LineChart data={data} />

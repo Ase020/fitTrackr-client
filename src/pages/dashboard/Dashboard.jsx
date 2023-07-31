@@ -17,7 +17,11 @@ const Dashboard = () => {
       <div className="dashboard_report-section">
         {/* Row 1 */}
         <div className="dashboard_bmi_user-container">
-          <LineChartContainer data={weightData} />
+          <LineChartContainer
+            data={weightData}
+            parameter="Weight"
+            paramValue={64}
+          />
 
           <div className="recent_workout_container">
             <h5 className="recent_workout-header">top workouts</h5>
@@ -63,7 +67,11 @@ const Dashboard = () => {
 
         {/* Row 2 */}
         <div className="dashboard_bmi_user-container">
-          <LineChartContainer data={bmiData} />
+          <LineChartContainer
+            data={bmiData}
+            parameter="BMI"
+            paramValue={19.87}
+          />
 
           <div className="recent_workout_container">
             <h5 className="recent_workout-header">recent workouts</h5>
