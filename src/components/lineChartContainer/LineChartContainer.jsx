@@ -9,11 +9,11 @@ const LineChartContainer = ({ data, parameter, paramValue }) => {
         <h5 className="bmi_header">{parameter}</h5>
         <p className="bmi_body">
           {paramValue}
-          {parameter === "Weight" ? "kgs" : ""}
+          {parameter === "Weight" && "kgs"}
         </p>
       </div>
       <div className="graph_box">
-        <LineChart data={data} />
+        <LineChart data={data} parameter={parameter} />
       </div>
     </div>
   );
