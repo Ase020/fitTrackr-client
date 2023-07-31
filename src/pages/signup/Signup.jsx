@@ -68,10 +68,5 @@ const Signup = () => {
       </div>
     </div>
   );
-import "./signup.css";
-
-const Signup = () => {
-  return <div>Signup</div>;
-};
-
-export default Signup;
+  }
+  export default Signup;
