@@ -14,22 +14,24 @@ const PasswordReset = () => {
           />
         </div>
 
-        <div className="form-container">
+        <div className="form-re-container">
           <h2>Password reset</h2>
           <form>
-            <div className="form-group">
+            <div className="form-re-group">
               <label htmlFor="email">Email Address</label>
               <input
+                className="that-input"
                 type="email"
                 id="email"
                 name="email"
-                placeholder="jdoe123@example.com"
+                placeholder="jondoe123@example.com"
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="form-re-group">
               <label htmlFor="password">New password</label>
               <input
+                className="that-input"
                 type="password"
                 id="newPassword"
                 name="newPassword"
@@ -37,9 +39,10 @@ const PasswordReset = () => {
                 required
               />
             </div>
-            <div className="form-group">
+            <div className="form-re-group">
               <label htmlFor="confirmNewPassword">Confirm new password</label>
               <input
+                className="that-input"
                 type="password"
                 id="confirmNewPassword"
                 name="confirmNewPassword"
@@ -47,9 +50,9 @@ const PasswordReset = () => {
                 required
               />
             </div>
-            <button type="submit">Reset</button>
+            <button className="reset-btn" type="submit">Reset</button>
           </form>
-          <div id="or">or</div>
+          <div className="or">or</div>
           <p>
             Already have an account?{" "}
             <a className="login" href="/login">
