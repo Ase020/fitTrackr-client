@@ -12,6 +12,7 @@ import nb from "./nb.png";
 import espirit from "./espirit.png";
 import waterBottle from "./water-bottle.png";
 import weightPlate from "./weight-plate-dark.png";
+import resetImage from "./reset image.png"
 
 export {
   logo,
@@ -28,4 +29,5 @@ export {
   espirit,
   waterBottle,
   weightPlate,
+  resetImage,
 };
