@@ -5,5 +5,7 @@ import facebook from "./facebook.png";
 import twitter from "./twitter.png";
 import instagram from "./instagram.png";
 import dribbble from "./dribbble.png";
+import login1 from "./login1.png";
 
-export { logo, footerLogo, enterEmail, facebook, twitter, instagram, dribbble };
+
+export { logo, footerLogo, enterEmail, facebook, twitter, instagram, dribbble, login1 };
