@@ -1,0 +1,19 @@
+.dashboard_container {
+  border: 1px solid red;
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.dashboard_header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard_header {
+  font-size: 24px;
+  color: #969ea0;
+  font-weight: 600;
+}

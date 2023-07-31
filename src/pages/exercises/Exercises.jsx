@@ -1,8 +1,5 @@
-/* eslint-disable react/prop-types */
-// import React from 'react'
-
-import { ExerciseCard } from '../../components';
-import './exercises.css';
+import { ExerciseCard } from "../../components";
+import "./exercises.css";
 
 function Exercises() {
   return (

@@ -1,7 +1,6 @@
 import "./password-reset.css";
 import { resetImage } from "../../assets";
 
-
 const PasswordReset = () => {
   return (
     <div className="reset-container">
