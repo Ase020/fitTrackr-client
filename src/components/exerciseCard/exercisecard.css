@@ -1,0 +1,25 @@
+.related_exercise-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 32px;
+  border-bottom: 2px solid #f48c7c;
+  width: 352px;
+  /* height: 416px; */
+}
+.related_exercise-img_wrapper {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.relatd_exercise-name-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.related_exercise-title {
+  font-size: 24px;
+}
+.body_part-data {
+  color: #007bff;
+}
