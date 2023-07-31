@@ -34,6 +34,49 @@
   border-radius: 4px;
 }
 
-.dashboard_download-img {
-  color: #3e4396;
+.dashboard_report-section {
+  border: 1px solid blue;
+}
+
+.dashboard_bmi_user-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.bmi_container {
+  flex: 2;
+  padding: 24px;
+  background: #1f2a40;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bmi_header-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.bmi_header {
+  font-size: 14px;
+}
+
+.bmi_body {
+  color: #4cceac;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.graph_box {
+  height: 400px;
+}
+
+.user_overview_container {
+  flex: 1;
+  border: 1px solid blue;
 }
