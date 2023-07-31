@@ -1,7 +1,7 @@
 import DownloadIcon from "@mui/icons-material/Download";
 
 import "./dashboard.css";
-import { LineChart } from "../../components";
+import { LineChart, WorkoutCard } from "../../components";
 
 const Dashboard = () => {
   return (
@@ -28,45 +28,8 @@ const Dashboard = () => {
 
           <div className="recent_workout_container">
             <h5 className="recent_workout-header">recent workouts</h5>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
-            <p>user overview data</p>
+
+            <WorkoutCard />
           </div>
         </div>
       </div>

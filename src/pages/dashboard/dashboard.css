@@ -84,6 +84,9 @@
   overflow: scroll;
 
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .recent_workout-header {

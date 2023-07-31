@@ -4,5 +4,16 @@ import { default as HeroSection } from "./hero-section/HeroSection";
 import { default as CleanDesign } from "./clean-design/CleanDesign";
 import { default as ExerciseCard } from "./exerciseCard/ExerciseCard";
 import { default as LineChart } from "./lineChart/LineChart";
+import { default as ProgressCircle } from "./progress-circle/ProgressCircle";
+import { default as WorkoutCard } from "./workoutCard/WorkoutCard";
 
-export { Navbar, Footer, HeroSection, CleanDesign, ExerciseCard, LineChart };
+export {
+  Navbar,
+  Footer,
+  HeroSection,
+  CleanDesign,
+  ExerciseCard,
+  LineChart,
+  ProgressCircle,
+  WorkoutCard,
+};

@@ -1,0 +1,8 @@
+.workout_card {
+  background: #1f2a40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 8px 12px;
+}
