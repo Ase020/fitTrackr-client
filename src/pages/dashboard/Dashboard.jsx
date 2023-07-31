@@ -18,7 +18,7 @@ const Dashboard = () => {
         <div className="dashboard_bmi_user-container">
           <div className="bmi_container">
             <div className="bmi_header-container">
-              <p className="bmi_header">Body Weight</p>
+              <h5 className="bmi_header">Body Weight</h5>
               <p className="bmi_body">65 kgs</p>
             </div>
             <div className="graph_box">
@@ -26,7 +26,48 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <div className="user_overview_container">user overview data</div>
+          <div className="recent_workout_container">
+            <h5 className="recent_workout-header">recent workouts</h5>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+            <p>user overview data</p>
+          </div>
         </div>
       </div>
     </div>
