@@ -7,17 +7,6 @@ import instagram from "./instagram.png";
 import dribbble from "./dribbble.png";
 import signUp from "./signup-image.png";
 import googleIcon from "./google-icon.svg";
-
-export {
-    logo,
-    footerLogo,
-    enterEmail,
-    facebook,
-    twitter,
-    instagram,
-    dribbble,
-    signUp,
-    googleIcon
 import heroImg from "./hero-img.png";
 import nike from "./nike.png";
 import apple from "./apple.png";
@@ -49,4 +38,6 @@ export {
   bodyPart,
   exerciseDesc,
   equipment,
+  signUp,
+  googleIcon,
 };
