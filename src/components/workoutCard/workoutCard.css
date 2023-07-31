@@ -6,3 +6,39 @@
 
   padding: 8px 12px;
 }
+
+.workout_name-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.card_workout_name {
+  font-size: 16px;
+  color: #4cceac;
+  line-height: 20px;
+  text-transform: lowercase;
+}
+
+.card_exercise_name {
+  color: lightgray;
+  font-size: 10px;
+  line-height: 16px;
+  text-transform: lowercase;
+}
+
+.workout_card_date {
+  color: lightgray;
+}
+
+.workout_progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.workout_progress-percentage {
+  font-size: 8px;
+  color: bisque;
+  font-style: italic;
+}

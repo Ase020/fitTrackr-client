@@ -6,6 +6,7 @@ import { default as ExerciseCard } from "./exerciseCard/ExerciseCard";
 import { default as LineChart } from "./lineChart/LineChart";
 import { default as ProgressCircle } from "./progress-circle/ProgressCircle";
 import { default as WorkoutCard } from "./workoutCard/WorkoutCard";
+import { default as LineChartContainer } from "./lineChartContainer/LineChartContainer";
 
 export {
   Navbar,
@@ -16,4 +17,5 @@ export {
   LineChart,
   ProgressCircle,
   WorkoutCard,
+  LineChartContainer,
 };
