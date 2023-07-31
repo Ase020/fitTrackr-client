@@ -1,7 +1,6 @@
 import "./password-reset.css";
 import { resetImage } from "../../assets";
 
-
 const PasswordReset = () => {
   return (
     <div className="reset-container">
@@ -47,7 +46,9 @@ const PasswordReset = () => {
                 required
               />
             </div>
-            <button type="submit">Reset</button>
+            <button className="password_reset-btn" type="submit">
+              Reset
+            </button>
           </form>
           <div id="or">or</div>
           <p>
