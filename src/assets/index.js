@@ -12,6 +12,7 @@ import nb from "./nb.png";
 import espirit from "./espirit.png";
 import waterBottle from "./water-bottle.png";
 import weightPlate from "./weight-plate-dark.png";
+import resetImage from "./reset image.png"
 import exerciseGif from "./exercise.gif";
 import bodyPart from "./body_part.svg";
 import exerciseDesc from "./description.svg";
@@ -32,6 +33,7 @@ export {
   espirit,
   waterBottle,
   weightPlate,
+  resetImage,
   exerciseGif,
   bodyPart,
   exerciseDesc,
