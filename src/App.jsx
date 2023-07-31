@@ -2,18 +2,17 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import "./App.css";
-import { Layout, Home, Login, Signup, PasswordReset } from "./pages";
-import {
-  Layout,
-  Home,
+import { 
+  Layout, 
+  Home, 
   Login,
-  Signup,
-  PasswordReset,
-  Membership,
-  Exercises,
-  ExerciseDetails,
-  Dashboard,
-  Profile,
+  Signup, 
+  PasswordReset, 
+  Membership, 
+  Exercises, 
+  ExerciseDetails, 
+  Dashboard, 
+  Profile 
 } from "./pages";
 
 const App = () => {
