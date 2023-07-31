@@ -17,6 +17,8 @@ import exerciseGif from "./exercise.gif";
 import bodyPart from "./body_part.svg";
 import exerciseDesc from "./description.svg";
 import equipment from "./equipment.svg";
+import signUp from "./signup image.png";
+import googleIcon from "./google-icon.svg";
 
 export {
   logo,
@@ -38,4 +40,6 @@ export {
   bodyPart,
   exerciseDesc,
   equipment,
+  signUp,
+  googleIcon,
 };
