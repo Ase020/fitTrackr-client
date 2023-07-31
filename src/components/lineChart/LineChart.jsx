@@ -2,7 +2,6 @@
 import { ResponsiveLine } from "@nivo/line";
 
 const LineChart = ({ data, parameter }) => {
-  console.log(typeof parameter);
   return (
     <ResponsiveLine
       data={data}
