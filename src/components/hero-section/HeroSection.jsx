@@ -18,7 +18,7 @@ const HeroSection = () => {
           is the right place for you to set and track your fitness goals.
         </p>
 
-        <Link className="hero_section-get-started" to="/">
+        <Link className="hero_section-get-started" to="/exercises">
           Get started
         </Link>
 
