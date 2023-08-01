@@ -59,7 +59,6 @@ const Signup = ({ onLogin }) => {
                 className="this-input"
                 type="password"
                 id="password"
-                
                 name="password"
                 placeholder="Enter your password"
                 value={password}
@@ -77,6 +76,7 @@ const Signup = ({ onLogin }) => {
                 placeholder="Confirm your password"
                 value={passwordConfirmation}
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
+                autoComplete="password"
                 required
               />
             </div>
