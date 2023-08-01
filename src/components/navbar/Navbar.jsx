@@ -5,12 +5,13 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [profile, setProfile] = useState(false);
-  const currentUser = null;
-  // {
-  //   name: "felix",
-  //   profile:
-  //     "https://images.pexels.com/photos/17751042/pexels-photo-17751042.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-  // };
+  const currentUser = {
+    name: "felix",
+    is_admin: true,
+    profile:
+      "https://images.pexels.com/photos/17751042/pexels-photo-17751042.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+  };
+
   return (
     <header className="navbar-container">
       {/* logo */}
@@ -47,6 +48,15 @@ const Navbar = () => {
               >
                 My profile
               </Link>
+              {currentUser?.is_admin && (
+                <Link
+                  className="user_profile-link"
+                  onClick={() => setProfile((prev) => !prev)}
+                  to="/add-exercise"
+                >
+                  Add Exercise
+                </Link>
+              )}
               <Link
                 className="user_profile-link"
                 onClick={() => setProfile((prev) => !prev)}
