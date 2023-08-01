@@ -13,6 +13,7 @@ import {
   ExerciseDetails,
   Dashboard,
   Profile,
+  Workout,
 } from "./pages";
 
 const App = () => {
@@ -52,6 +53,10 @@ const App = () => {
         {
           path: "/profile",
           element: <Profile />,
+        },
+        {
+          path: "/workouts",
+          element: <Workout />,
         },
         {
           path: "/login/password_reset",
