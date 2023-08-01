@@ -8,6 +8,7 @@ import { default as Exercises } from "./exercises/Exercises";
 import { default as ExerciseDetails } from "./exercise-details/ExerciseDetails";
 import { default as Profile } from "./profile/Profile";
 import { default as Dashboard } from "./dashboard/Dashboard";
+import { default as Workout } from "./workout/Workout";
 
 export {
   Home,
@@ -20,4 +21,5 @@ export {
   ExerciseDetails,
   Profile,
   Dashboard,
+  Workout,
 };
