@@ -15,7 +15,7 @@ const Login = ({ handleLogin }) => {
     e.preventDefault();
 
     //  login request to the server
-    fetch("https://group-6-project.onrender.com/login", {
+    fetch("http://localhost:3000/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
