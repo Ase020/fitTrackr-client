@@ -12,7 +12,7 @@ const Signup = ({ onLogin }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("https://orenged524@gmail.com", {
+    fetch("http://localhost:3000/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
