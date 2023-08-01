@@ -5,6 +5,7 @@ import { LineChartContainer, WorkoutCard } from "../../components";
 import { bmiData, weightData } from "../../constants";
 
 const Dashboard = () => {
+  
   return (
     <div className="dashboard_container">
       <div className="dashboard_header-container">
