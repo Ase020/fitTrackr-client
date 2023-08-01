@@ -1,7 +1,7 @@
 import { DataGrid } from "@mui/x-data-grid";
 
 import "./workout.css";
-import { mockDataInvoices } from "../../constants";
+import { mockDataWorkouts as data } from "../../constants";
 
 const Workout = () => {
   const columns = [
@@ -16,21 +16,26 @@ const Workout = () => {
       cellClassName: "name-column--cell",
     },
     {
-      field: "email",
-      headerName: "Email",
+      field: "exercise",
+      headerName: "Exercise",
       flex: 1,
     },
     {
-      field: "cost",
-      headerName: "Cost",
-      headerAlign: "left",
-      align: "left",
-      renderCell: (params) => <div>${params.row.cost}</div>,
+      field: "target",
+      headerName: "Target",
+      flex: 0.5,
     },
     {
-      field: "phone",
-      headerName: "Phone",
+      field: "achieved",
+      headerName: "Achieved",
       flex: 0.5,
+    },
+    {
+      field: "percentage",
+      headerName: "Percentage",
+      headerAlign: "left",
+      align: "left",
+      renderCell: (params) => <div>{params.row.percentage}%</div>,
     },
     {
       field: "date",
@@ -48,7 +53,7 @@ const Workout = () => {
         </p>
       </div>
       <div className="workout_table-container">
-        <DataGrid rows={mockDataInvoices} columns={columns} checkboxSelection />
+        <DataGrid rows={data} columns={columns} checkboxSelection />
       </div>
     </div>
   );
