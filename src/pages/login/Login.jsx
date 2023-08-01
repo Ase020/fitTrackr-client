@@ -30,7 +30,7 @@ const Login = ({ handleLogin }) => {
       })
       .then((user) => {
         handleLogin(user);
-        navigate("/protected/dashboard"); // Redirect to the dashboard after successful login
+        navigate("/dashboard"); // Redirect to the dashboard after successful login
       })
       .catch((error) => {
         console.error("Login failed:", error);
