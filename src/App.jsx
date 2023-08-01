@@ -2,7 +2,18 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import "./App.css";
-import { Layout, Home, Login, Signup, PasswordReset } from "./pages";
+import {
+  Layout,
+  Home,
+  Login,
+  Signup,
+  PasswordReset,
+  Membership,
+  Exercises,
+  ExerciseDetails,
+  Dashboard,
+  Profile,
+} from "./pages";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -21,6 +32,26 @@ const App = () => {
         {
           path: "/signup",
           element: <Signup />,
+        },
+        {
+          path: "/exercises",
+          element: <Exercises />,
+        },
+        {
+          path: "/exercises/:id",
+          element: <ExerciseDetails />,
+        },
+        {
+          path: "/membership",
+          element: <Membership />,
+        },
+        {
+          path: "/dashboard",
+          element: <Dashboard />,
+        },
+        {
+          path: "/profile",
+          element: <Profile />,
         },
         {
           path: "/login/password_reset",
