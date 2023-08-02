@@ -2,7 +2,7 @@ import "./login.css";
 import { login1 } from "../../assets";
 import { googleIcon } from "../../assets";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Login = (handleLogin) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -35,11 +35,7 @@ const Login = (handleLogin) => {
     <div className="login_container">
       <div className="login-wrapper">
         <div className="image-container">
-          <img
-            src={login1}
-            alt="Login-img"
-            className="login-logo-img"
-          />
+          <img src={login1} alt="Login-img" className="login-logo-img" />
         </div>
         <div className="form_container">
           <h3>Login</h3>
@@ -52,7 +48,7 @@ const Login = (handleLogin) => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                autoComplete="username"
+                autoComplete="email"
                 required
               />
             </div>
@@ -60,7 +56,7 @@ const Login = (handleLogin) => {
               <label htmlFor="password">Password</label>
               <input
                 type="password"
-                placeholder="**********************"
+                placeholder="************"
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -68,27 +64,24 @@ const Login = (handleLogin) => {
                 required
               />
             </div>
-            <button type="submit" className="login-btn">Log In</button>
+            <button type="submit" className="login-btn">
+              Log In
+            </button>
           </form>
           <p className="have-account">
-            <a className="login" href="/PasswordReset">
+            <Link className="login" to="/login/password_reset">
               Forgot password?
-            </a>
+            </Link>
           </p>
           <div className="or-divides">or</div>
           <div className="google-login">
-            <img
-              src={googleIcon}
-              alt="Google-icon"
-              className="google-icon"
-            />
-            
+            <img src={googleIcon} alt="Google-icon" className="google-icon" />
           </div>
           <p className="have-account">
             Don&apos;t have an account?{" "}
-            <a className="login" href="/signup">
+            <Link className="login" to="/signup">
               Sign up
-            </a>
+            </Link>
           </p>
         </div>
       </div>
