@@ -4,15 +4,20 @@ import { signUp } from "../../assets";
 import { googleIcon } from "../../assets";
 import { useNavigate } from "react-router-dom"; 
 
+
 const Signup = ({ onLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+
   const navigate = useNavigate();
+
+
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:3000/users", {
+    fetch("http://localhost:3000/signup", {
+
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -23,7 +28,9 @@ const Signup = ({ onLogin }) => {
     })
       .then((res) => res.json())
       .then(onLogin);
+
     navigate("/login");
+
   }
 
   return (

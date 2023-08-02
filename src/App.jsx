@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-import "./App.css";
+import './App.css';
 import {
   Layout,
   Home,
@@ -13,48 +13,63 @@ import {
   ExerciseDetails,
   Dashboard,
   Profile,
-} from "./pages";
+  Workout,
+  AddExercise,
+  Myprofile,
+} from './pages';
 
 const App = () => {
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: '/',
       element: <Layout />,
       children: [
         {
-          path: "/",
+          path: '/',
           element: <Home />,
         },
         {
-          path: "/login",
+          path: '/login',
           element: <Login />,
         },
         {
-          path: "/signup",
+          path: '/signup',
           element: <Signup />,
         },
         {
-          path: "/exercises",
+          path: '/exercises',
           element: <Exercises />,
         },
         {
-          path: "/exercises/:id",
+          path: '/exercises/:id',
           element: <ExerciseDetails />,
         },
         {
-          path: "/membership",
+          path: '/membership',
           element: <Membership />,
         },
         {
-          path: "/dashboard",
+          path: '/dashboard',
           element: <Dashboard />,
         },
         {
-          path: "/profile",
+          path: '/profile',
           element: <Profile />,
         },
         {
-          path: "/login/password_reset",
+          path: '/myprofile',
+          element: <Myprofile />,
+        },
+        {
+          path: '/add-exercise',
+          element: <AddExercise />,
+        },
+        {
+          path: '/workouts',
+          element: <Workout />,
+        },
+        {
+          path: '/login/password_reset',
           element: <PasswordReset />,
         },
       ],

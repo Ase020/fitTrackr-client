@@ -19,6 +19,7 @@ import exerciseDesc from "./description.svg";
 import equipment from "./equipment.svg";
 import signUp from "./signup image.png";
 import googleIcon from "./google-icon.svg";
+import login1 from "./login1.png";
 
 export {
   logo,
@@ -42,4 +43,5 @@ export {
   equipment,
   signUp,
   googleIcon,
+  login1,
 };

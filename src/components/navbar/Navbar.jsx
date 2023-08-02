@@ -1,15 +1,17 @@
-import { Link } from "react-router-dom";
-import { logo } from "../../assets";
-import "./navbar.css";
-import { useState } from "react";
+import { Link } from 'react-router-dom';
+import { logo } from '../../assets';
+import './navbar.css';
+import { useState } from 'react';
 
 const Navbar = () => {
   const [profile, setProfile] = useState(false);
   const currentUser = {
-    name: "felix",
+    name: 'felix',
+    is_admin: true,
     profile:
-      "https://images.pexels.com/photos/17751042/pexels-photo-17751042.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      'https://images.pexels.com/photos/17751042/pexels-photo-17751042.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
   };
+
   return (
     <header className="navbar-container">
       {/* logo */}
@@ -25,7 +27,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>
         <Link to="/exercises">Exercises</Link>
         <Link to="/membership">Membership</Link>
-        <Link to="/contact">Contact Us</Link>
+        <Link to="/workouts">My Workouts</Link>
       </nav>
 
       {/* login */}
@@ -42,10 +44,19 @@ const Navbar = () => {
               <Link
                 className="user_profile-link"
                 onClick={() => setProfile((prev) => !prev)}
-                to="/profile"
+                to="/myprofile"
               >
                 My profile
               </Link>
+              {currentUser?.is_admin && (
+                <Link
+                  className="user_profile-link"
+                  onClick={() => setProfile((prev) => !prev)}
+                  to="/add-exercise"
+                >
+                  Add Exercise
+                </Link>
+              )}
               <Link
                 className="user_profile-link"
                 onClick={() => setProfile((prev) => !prev)}

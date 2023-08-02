@@ -21,10 +21,15 @@
   font-size: 24px;
 }
 
+.related_exercise-title::first-letter {
+  text-transform: capitalize;
+}
+
 .exercise_body_part-header {
   font-size: 16px;
 }
 
 .body_part-data {
   color: #007bff;
+  text-transform: capitalize;
 }
