@@ -11,7 +11,7 @@ const AddExercise = () => {
   const [intensity, setIntensity] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
-  const [saved, setSaved] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -22,6 +22,7 @@ const AddExercise = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     // const exerciseObj = {
     //   name,
     //   description,
@@ -43,10 +44,11 @@ const AddExercise = () => {
 
       if (res.ok) {
         console.log("exercise saved successfully!");
-        setSaved(true);
+        setLoading(false);
         navigate("/exercises");
       } else {
         const data = await res.json();
+        setLoading(false);
         console.log("Error: " + data.errors);
       }
     } catch (error) {
@@ -107,10 +109,9 @@ const AddExercise = () => {
         </div>
 
         <button type="submit" className="add_exercise-btn">
-          Create
+          {loading ? "Creating..." : "Create"}
         </button>
       </form>
-      {saved && <p>exercise saved!</p>}
     </div>
   );
 };
