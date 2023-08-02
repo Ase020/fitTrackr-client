@@ -4,7 +4,7 @@ import "react-quill/dist/quill.snow.css";
 // import { Image } from "cloudinary-react";
 
 import "./add-exercise.css";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const AddExercise = () => {
   const [name, setName] = useState("");
@@ -12,8 +12,9 @@ const AddExercise = () => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
+  // const [isSaved, setIsSaved] = useState(false);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleChange = (e) => {
     e.persist();
@@ -23,12 +24,6 @@ const AddExercise = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    // const exerciseObj = {
-    //   name,
-    //   description,
-    //   image,
-    //   intensity_type: intensity,
-    // };
 
     const formData = new FormData();
     formData.append("name", name);
@@ -45,7 +40,8 @@ const AddExercise = () => {
       if (res.ok) {
         console.log("exercise saved successfully!");
         setLoading(false);
-        navigate("/exercises");
+        // setIsSaved(true);
+        // navigate("/exercises");
       } else {
         const data = await res.json();
         setLoading(false);
@@ -54,8 +50,6 @@ const AddExercise = () => {
     } catch (error) {
       console.log("Error: ", error);
     }
-
-    // console.log(exerciseObj);
   };
 
   return (
@@ -111,6 +105,7 @@ const AddExercise = () => {
         <button type="submit" className="add_exercise-btn">
           {loading ? "Creating..." : "Create"}
         </button>
+        {loading && <p>Saving...</p>}
       </form>
     </div>
   );
