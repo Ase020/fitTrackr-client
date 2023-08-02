@@ -41,8 +41,9 @@ const Login = (handleLogin) => {
           <h3>Login</h3>
           <form onSubmit={handleSubmit} autoComplete="on">
             <div className="form-group">
-              <label htmlFor="email">Email Address</label>
+              <label>Email Address</label>
               <input
+                className="sign_page-inputs"
                 type="email"
                 placeholder="jondoe123@gmail.com"
                 id="email"
@@ -53,8 +54,9 @@ const Login = (handleLogin) => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="password">Password</label>
+              <label>Password</label>
               <input
+                className="sign_page-inputs"
                 type="password"
                 placeholder="************"
                 id="password"
@@ -69,17 +71,18 @@ const Login = (handleLogin) => {
             </button>
           </form>
           <p className="have-account">
-            <Link className="login" to="/login/password_reset">
+            <Link className="login-shortcut" to="/login/password_reset">
               Forgot password?
             </Link>
           </p>
           <div className="or-divides">or</div>
           <div className="google-login">
             <img src={googleIcon} alt="Google-icon" className="google-icon" />
+            <p>Google</p>
           </div>
           <p className="have-account">
             Don&apos;t have an account?{" "}
-            <Link className="login" to="/signup">
+            <Link className="login-shortcut" to="/signup">
               Sign up
             </Link>
           </p>

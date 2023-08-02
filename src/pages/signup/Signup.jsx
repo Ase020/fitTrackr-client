@@ -1,23 +1,20 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
+import { useState } from "react";
+
 import "./signup.css";
 import { signUp } from "../../assets";
 import { googleIcon } from "../../assets";
-import { useNavigate } from "react-router-dom"; 
-
+import { useNavigate } from "react-router-dom";
 
 const Signup = ({ onLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
-
   const navigate = useNavigate();
-
-
 
   function handleSubmit(e) {
     e.preventDefault();
     fetch("http://localhost:3000/signup", {
-
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -30,7 +27,6 @@ const Signup = ({ onLogin }) => {
       .then(onLogin);
 
     navigate("/login");
-
   }
 
   return (
@@ -38,18 +34,18 @@ const Signup = ({ onLogin }) => {
       <div className="signup-wrapper">
         <div className="image-container-wrapper">
           <img
-            src={signUp} 
+            src={signUp}
             alt="Signup-image"
             className="signup-image-container-image"
           />
         </div>
         <div className="form-for-container">
           <h2>Sign up</h2>
-          <form  className="Form" onSubmit={handleSubmit} autoComplete="on" >
+          <form className="Form" onSubmit={handleSubmit} autoComplete="on">
             <div className="forms-group">
-              <label htmlFor="email">Email Address</label>
+              <label>Email Address</label>
               <input
-                className="this-input"
+                className="sign_page-inputs"
                 type="email"
                 id="email"
                 name="email"
@@ -61,9 +57,9 @@ const Signup = ({ onLogin }) => {
               />
             </div>
             <div className="forms-group">
-              <label htmlFor="password">Password</label>
+              <label>Password</label>
               <input
-                className="this-input"
+                className="sign_page-inputs"
                 type="password"
                 id="password"
                 name="password"
@@ -74,9 +70,9 @@ const Signup = ({ onLogin }) => {
               />
             </div>
             <div className="forms-group">
-              <label htmlFor="confirmPassword">Confirm Password</label>
+              <label>Confirm Password</label>
               <input
-                className="this-input"
+                className="sign_page-inputs"
                 type="password"
                 id="confirmPassword"
                 name="confirmPassword"
@@ -87,20 +83,18 @@ const Signup = ({ onLogin }) => {
                 required
               />
             </div>
-            <button className="submit-button" type="submit">Signup</button>
+            <button className="submit-button" type="submit">
+              Signup
+            </button>
           </form>
           <div id="or">or</div>
           <div className="google-signup">
-            <img
-              src={googleIcon}
-              alt="Google-icon"
-              className="google-icon"
-            />
+            <img src={googleIcon} alt="Google-icon" className="google-icon" />
             <p>Google</p>
           </div>
           <p className="have-account">
             Already have an account?{" "}
-            <a className="login" href="/login">
+            <a className="login-shortcut" href="/login">
               Login
             </a>
           </p>
@@ -108,5 +102,5 @@ const Signup = ({ onLogin }) => {
       </div>
     </div>
   );
-}
+};
 export default Signup;
