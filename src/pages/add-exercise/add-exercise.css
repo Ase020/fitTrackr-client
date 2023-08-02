@@ -1,0 +1,77 @@
+.add_exercise-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.add_exercise-header {
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.add_exercise-input_wrapper {
+  border: 0.5px solid #969ea0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+  border-radius: 16px;
+}
+
+.add_exercise_input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add_exercise-label {
+  color: #969ea0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.add_exercise-input {
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #969ea0;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+  color: whitesmoke;
+}
+
+.img_input {
+  padding: 0;
+  border: none;
+}
+
+.add_exercise-input::placeholder {
+  color: rgb(181, 181, 181);
+  font-style: italic;
+}
+
+.ql-toolbar {
+  background-color: #969ea0;
+}
+
+.ql-editor {
+  min-height: 200px;
+  font-size: 16px;
+}
+
+.add_exercise-btn {
+  padding: 8px;
+  border: 1px solid #78ce91;
+  cursor: pointer;
+  border-radius: 8px;
+  background: transparent;
+  color: #78ce91;
+  font-size: 16px;
+  transition: all 0.5s ease-in;
+}
+
+.add_exercise-btn:hover {
+  color: white;
+  background: #78ce91;
+}
