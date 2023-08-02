@@ -19,6 +19,7 @@
 }
 .related_exercise-title {
   font-size: 24px;
+  text-transform: capitalize;
 }
 
 .exercise_body_part-header {
@@ -27,4 +28,5 @@
 
 .body_part-data {
   color: #007bff;
+  text-transform: capitalize;
 }
