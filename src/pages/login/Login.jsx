@@ -10,7 +10,7 @@ const Login = (handleLogin) => {
   function handleSubmit(e) {
     e.preventDefault();
     // Send login request to the server
-    fetch("/api/login", {
+    fetch("http://localhost:3000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
