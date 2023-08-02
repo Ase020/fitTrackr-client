@@ -36,17 +36,17 @@ const ExerciseDetails = () => {
       .then(setExercise);
   }, [id]);
 
-  console.log(exercise);
+  // console.log(exercise);
 
   return (
     <div className="exercise_details-container">
-      <h5 className="exercise_details-title">{exercise.name}</h5>
+      <h5 className="exercise_details-title">{exercise?.name}</h5>
 
       <div className="exercise_details-body">
         <div className="exercise_details-img_container">
           <img
-            src={exercise.image}
-            alt={exercise.name}
+            src={exercise?.image}
+            alt={exercise?.name}
             className="exercise_details-img"
           />
 
@@ -63,7 +63,8 @@ const ExerciseDetails = () => {
                 <p className="title-name">Equipment</p>
               </div>
               <div className="exercise-detail-desc">
-                {exercise.equipments[0]?.name}
+                {exercise?.equipments?.length > 0 &&
+                  exercise.equipments[0].name}
               </div>
             </div>
 

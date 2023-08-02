@@ -1,14 +1,23 @@
 import { useEffect, useState } from "react";
-import { ExerciseCard } from "../../components";
+import { ExerciseCard, Loader } from "../../components";
 import "./exercises.css";
 
 function Exercises() {
   const [exercises, setExercises] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     fetch("http://127.0.0.1:3000/exercises")
       .then((res) => res.json())
-      .then(setExercises);
+      .then((data) => {
+        setExercises(data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsLoading(false);
+      });
   }, []);
 
   return (
@@ -20,11 +29,15 @@ function Exercises() {
           help you achieve your fitness goals.
         </p>
       </div>
-      <div className="all_ex_wrapper">
-        {exercises.map((exercise) => (
-          <ExerciseCard key={exercise.id} exercise={exercise} />
-        ))}
-      </div>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <div className="all_ex_wrapper">
+          {exercises.map((exercise) => (
+            <ExerciseCard key={exercise.id} exercise={exercise} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
