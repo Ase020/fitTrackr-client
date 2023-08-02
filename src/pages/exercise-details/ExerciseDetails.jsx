@@ -1,5 +1,7 @@
+import { useParams } from "react-router-dom";
 import { bodyPart, equipment, exerciseDesc, exerciseGif } from "../../assets";
 import "./exercise-details.css";
+import { useEffect, useState } from "react";
 
 const RelatedExercise = () => (
   <div className="related_exercise-wrapper">
@@ -24,15 +26,27 @@ const RelatedExercise = () => (
 );
 
 const ExerciseDetails = () => {
+  const { id } = useParams();
+
+  const [exercise, setExercise] = useState({});
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/exercises/${id}`)
+      .then((res) => res.json())
+      .then(setExercise);
+  }, [id]);
+
+  console.log(exercise);
+
   return (
     <div className="exercise_details-container">
-      <h5 className="exercise_details-title">Smith sprint lunge</h5>
+      <h5 className="exercise_details-title">{exercise.name}</h5>
 
       <div className="exercise_details-body">
         <div className="exercise_details-img_container">
           <img
-            src={exerciseGif}
-            alt="exercise"
+            src={exercise.image}
+            alt={exercise.name}
             className="exercise_details-img"
           />
 
@@ -49,7 +63,7 @@ const ExerciseDetails = () => {
                 <p className="title-name">Equipment</p>
               </div>
               <div className="exercise-detail-desc">
-                Smith Machine Smith Machine Smith Machine Smith Machine
+                {exercise.equipments[0]?.name}
               </div>
             </div>
 
@@ -67,12 +81,9 @@ const ExerciseDetails = () => {
                 <p className="title-name">Description</p>
               </div>
               <div className="exercise-detail-desc">
-                Diamond Push-Up The diamond push-up variation targets the
-                triceps brachii.6 It is done with your hands close together and
-                the index fingers and thumbs of one hand touching the other
-                hand, making a diamond shape on the floor. You then do push-ups
-                with your hands touching the center of your chest and elbows
-                close to your sides during each rep.
+                <div
+                  dangerouslySetInnerHTML={{ __html: exercise?.description }}
+                />
               </div>
             </div>
           </div>

@@ -19,6 +19,9 @@
 }
 .related_exercise-title {
   font-size: 24px;
+}
+
+.related_exercise-title::first-letter {
   text-transform: capitalize;
 }
 

@@ -11,7 +11,6 @@ function Exercises() {
       .then(setExercises);
   }, []);
 
-  console.log(exercises);
   return (
     <div className="exercises_wrapper">
       <div className="ex_text_wrapper">
