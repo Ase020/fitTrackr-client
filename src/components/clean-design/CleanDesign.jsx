@@ -2,6 +2,7 @@
 import { waterBottle, weightPlate } from "../../assets";
 import { design } from "../../constants";
 import "./clean-design.css";
+import Quotes from "./quotes";
 
 const Design = ({ design }) => {
   const { id, title, desc, bgColor } = design;
@@ -23,13 +24,15 @@ const CleanDesign = () => {
     <section className="clean_design-container">
       <div className="clean_design-intro">
         <div className="clean_design-logo">FitTrackr</div>
+        <div className="quotes-container"> {/* Add a container around Quotes */}
+          <Quotes />
+        </div>
         <div className="clean_design-desc">
           <h3 className="clean_design-header">
             Simple, powerful,
             <br />
             easy-to-use
           </h3>
-
           <p className="clean_design-body">
             Track your workouts, get better results, and be the best version of
             you. Less thinking, more lifting.
