@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { bodyPart, equipment, exerciseDesc, exerciseGif } from "../../assets";
 import "./exercise-details.css";
 import { useEffect, useState } from "react";
+import { Loader } from "../../components";
 
 const RelatedExercise = () => (
   <div className="related_exercise-wrapper">
@@ -27,6 +28,8 @@ const RelatedExercise = () => (
 
 const ExerciseDetails = () => {
   const { id } = useParams();
+  const [workoutProgress, setWorkoutProgress] = useState("before");
+  const [loading, setLoading] = useState(false);
 
   const [exercise, setExercise] = useState({});
 
@@ -37,6 +40,18 @@ const ExerciseDetails = () => {
   }, [id]);
 
   // console.log(exercise);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  const startExercise = () => {
+    confirm("Start exercise?");
+    setLoading(true);
+    setTimeout(() => {
+      setWorkoutProgress("achieved");
+      setLoading(false);
+    }, 3000);
+  };
 
   return (
     <div className="exercise_details-container">
@@ -50,7 +65,17 @@ const ExerciseDetails = () => {
             className="exercise_details-img"
           />
 
-          <button className="exercise_details-btn">Workout</button>
+          <button
+            className="exercise_details-btn"
+            style={
+              workoutProgress === "before"
+                ? { display: "inline" }
+                : { display: "none" }
+            }
+            onClick={() => setWorkoutProgress("target")}
+          >
+            Workout
+          </button>
         </div>
 
         <div className="exercise_details-wrapper">
@@ -95,43 +120,73 @@ const ExerciseDetails = () => {
       </div>
 
       {/* Exercise target */}
-      <div className="exercise_target_set-container">
-        <p className="exercise_target-header">Set your target</p>
 
-        <form className="exercise_target-form">
-          <label className="set_taget-label">Reps</label>
-          <input
-            type="number"
-            min={0}
-            placeholder="reps"
-            className="set_target-input"
-          />
+      {loading ? (
+        <div className="loader_container">
+          <Loader />
+        </div>
+      ) : (
+        <div
+          className="exercise_target_set-container"
+          style={
+            workoutProgress === "target"
+              ? { display: "inline" }
+              : { display: "none" }
+          }
+        >
+          <p className="exercise_target-header">Set your target</p>
 
-          <label className="set_taget-label">Duration(minutes)</label>
-          <input
-            type="number"
-            min={0}
-            placeholder="10 minutes"
-            className="set_target-input"
-          />
+          <form
+            className="exercise_target-form"
+            onSubmit={(e) => {
+              e.preventDefault();
+              startExercise();
+            }}
+          >
+            <label className="set_taget-label">Reps</label>
+            <input
+              type="number"
+              min={0}
+              placeholder="reps"
+              className="set_target-input"
+              required
+            />
 
-          <button type="submit" className="set_target-btn">
-            Start
-          </button>
-        </form>
-      </div>
+            <label className="set_taget-label">Duration(minutes)</label>
+            <input
+              type="number"
+              min={0}
+              placeholder="10 minutes"
+              className="set_target-input"
+              required
+            />
+
+            <button type="submit" className="set_target-btn">
+              Start
+            </button>
+          </form>
+        </div>
+      )}
 
       {/* Exercise stats */}
-      <div className="exercise_target_set-container">
+      <div
+        className="exercise_target_set-container"
+        style={
+          workoutProgress === "achieved"
+            ? { display: "inline" }
+            : { display: "none" }
+        }
+      >
         <p className="exercise_target-header">How many have you achieved?</p>
 
-        <form className="exercise_target-form">
+        <form className="exercise_target-form" onSubmit={handleSubmit}>
           <label className="set_taget-label">Reps</label>
           <input
             type="number"
             min={0}
             placeholder="reps"
             className="set_target-input"
+            required
           />
 
           <label className="set_taget-label">Duration(minutes)</label>
@@ -140,6 +195,7 @@ const ExerciseDetails = () => {
             min={0}
             placeholder="10 minutes"
             className="set_target-input"
+            required
           />
 
           <button type="submit" className="set_target-btn">
