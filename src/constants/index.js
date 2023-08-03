@@ -199,3 +199,16 @@ export const mockDataWorkouts = [
     date: "05/02/2021",
   },
 ];
+
+export const quotes = [
+  "The only bad workout is the one that didn't happen. - Unknown",
+  "Fitness is not about being better than someone else. It's about being better than you used to be. - Unknown",
+  "The difference between try and triumph is just a little umph! - Marvin Phillips",
+  "The only way to do great work is to love what you do. - Steve Jobs",
+  "The last three or four reps is what makes the muscle grow. - Arnold Schwarzenegger",
+  "The pain you feel today will be the strength you feel tomorrow. - Unknown",
+  "You don't have to be great to start, but you have to start to be great. - Zig Ziglar",
+  "Fitness is not a destination, it's a journey. - Unknown",
+  "The best way to predict your future is to create it. - Abraham Lincoln",
+  "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill"
+];
