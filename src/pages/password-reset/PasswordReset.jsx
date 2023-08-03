@@ -17,9 +17,9 @@ const PasswordReset = () => {
           <h2>Password reset</h2>
           <form>
             <div className="form-re-group">
-              <label htmlFor="email">Email Address</label>
+              <label>Email Address</label>
               <input
-                className="that-input"
+                className="sign_page-inputs"
                 type="email"
                 id="email"
                 name="email"
@@ -28,9 +28,9 @@ const PasswordReset = () => {
               />
             </div>
             <div className="form-re-group">
-              <label htmlFor="password">New password</label>
+              <label>New password</label>
               <input
-                className="that-input"
+                className="sign_page-inputs"
                 type="password"
                 id="newPassword"
                 name="newPassword"
@@ -39,9 +39,9 @@ const PasswordReset = () => {
               />
             </div>
             <div className="form-re-group">
-              <label htmlFor="confirmNewPassword">Confirm new password</label>
+              <label>Confirm new password</label>
               <input
-                className="that-input"
+                className="sign_page-inputs"
                 type="password"
                 id="confirmNewPassword"
                 name="confirmNewPassword"
@@ -49,7 +49,9 @@ const PasswordReset = () => {
                 required
               />
             </div>
-            <button className="reset-btn" type="submit">Reset</button>
+            <button className="reset-btn" type="submit">
+              Reset
+            </button>
           </form>
           <div className="or">or</div>
           <p>
