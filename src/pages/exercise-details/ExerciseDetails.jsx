@@ -73,7 +73,10 @@ const ExerciseDetails = () => {
                 <img src={bodyPart} alt="equipment" className="title-img" />
                 <p className="title-name">Body Part</p>
               </div>
-              <div className="exercise-detail-desc">Smith Machine</div>
+              <div className="exercise-detail-desc">
+                {exercise?.body_parts?.length > 0 &&
+                  exercise.body_parts[0].name}
+              </div>
             </div>
 
             <div className="exercise-detail-wrapper">
