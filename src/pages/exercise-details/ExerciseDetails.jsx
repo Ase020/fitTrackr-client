@@ -78,12 +78,17 @@ const ExerciseDetails = () => {
   };
 
   const startExercise = () => {
-    confirm("Start exercise?");
-    setLoading(true);
-    setTimeout(() => {
-      setWorkoutProgress("achieved");
+    const confirmed = confirm("Start exercise?");
+
+    if (confirmed) {
+      setLoading(true);
+      setTimeout(() => {
+        setWorkoutProgress("achieved");
+        setLoading(false);
+      }, 3000);
+    } else {
       setLoading(false);
-    }, 3000);
+    }
   };
 
   return (
