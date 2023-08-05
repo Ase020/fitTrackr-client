@@ -21,8 +21,6 @@ export const ExercisesProvider = ({ children }) => {
       });
   }, []);
 
-  console.log("isLoading context: ", isLoading);
-
   const value = { exercises, setExercises, isLoading, setIsLoading };
 
   return (

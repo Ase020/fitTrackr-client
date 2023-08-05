@@ -71,6 +71,7 @@ const ExerciseDetails = () => {
       } else {
         const data = await res.json();
         console.log("Error1: " + data.errors);
+        navigate("/login");
       }
     } catch (error) {
       console.log("Error2: ", error);

@@ -1,12 +1,15 @@
-import "./login.css";
-import { login1 } from "../../assets";
-import { googleIcon } from "../../assets";
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-const Login = (handleLogin) => {
+
+import "./login.css";
+import { googleIcon, login1 } from "../../assets";
+
+const Login = ({ onLogin }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   function handleSubmit(e) {
     e.preventDefault();
     // Send login request to the server
@@ -24,8 +27,8 @@ const Login = (handleLogin) => {
         return res.json();
       })
       .then((user) => {
-        handleLogin(user);
-        navigate("/dashboard");
+        onLogin(user);
+        navigate("/exercises");
       })
       .catch((error) => {
         console.error("Login failed:", error);

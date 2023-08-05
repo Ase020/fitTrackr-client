@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-
-import "./signup.css";
-import { signUp } from "../../assets";
-import { googleIcon } from "../../assets";
 import { useNavigate } from "react-router-dom";
+
+import { googleIcon, signUp } from "../../assets";
+import "./signup.css";
 
 const Signup = ({ onLogin }) => {
   const [email, setEmail] = useState("");
