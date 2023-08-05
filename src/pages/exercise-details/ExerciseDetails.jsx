@@ -1,8 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { bodyPart, equipment, exerciseDesc, exerciseGif } from "../../assets";
 import "./exercise-details.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Loader } from "../../components";
+import { UserContext } from "../../context/user";
 
 const RelatedExercise = () => (
   <div className="related_exercise-wrapper">
@@ -38,6 +39,7 @@ const ExerciseDetails = () => {
   const [durationAchieved, setDurationAchieved] = useState(0);
 
   const [exercise, setExercise] = useState({});
+  const [user] = useContext(UserContext);
 
   useEffect(() => {
     fetch(`http://localhost:3000/exercises/${id}`)
@@ -50,7 +52,7 @@ const ExerciseDetails = () => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append("user_id", 1);
+    formData.append("user_id", user?.id);
     formData.append("exercise_id", exercise?.id);
     formData.append("intensity_target", targetReps);
     formData.append("time_target", targetDuration);
@@ -60,10 +62,13 @@ const ExerciseDetails = () => {
     console.log("formData: ", formData);
 
     try {
-      const res = await fetch(`http://127.0.0.1:3000/users/${1}/workouts`, {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(
+        `http://127.0.0.1:3000/users/${user?.id}/workouts`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (res.ok) {
         console.log("workout saved successfully!");

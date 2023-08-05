@@ -7,9 +7,6 @@ import { useState } from "react";
 const Navbar = ({ user, onLogout, isLoggedin }) => {
   const [profile, setProfile] = useState(false);
   const navigate = useNavigate();
-  // const currentUser = user;
-
-  console.log("user: ", user, "isLoggedIn: ", isLoggedin);
 
   const handleLogout = () => {
     fetch("http://localhost:3000/logout", {

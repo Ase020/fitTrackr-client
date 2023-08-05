@@ -17,6 +17,7 @@ const Login = ({ onLogin }) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Cookie: document.cookie,
       },
       body: JSON.stringify({ email, password }),
     })
