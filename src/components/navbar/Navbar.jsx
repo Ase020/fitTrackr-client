@@ -1,15 +1,20 @@
-import { Link } from 'react-router-dom';
-import { logo } from '../../assets';
-import './navbar.css';
-import { useState } from 'react';
+/* eslint-disable react/prop-types */
+import { Link, useNavigate } from "react-router-dom";
+import { logo } from "../../assets";
+import "./navbar.css";
+import { useState } from "react";
 
-const Navbar = () => {
+const Navbar = ({ user, onLogout, isLoggedin }) => {
   const [profile, setProfile] = useState(false);
-  const currentUser = {
-    name: 'felix',
-    is_admin: true,
-    profile:
-      'https://images.pexels.com/photos/17751042/pexels-photo-17751042.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    fetch("http://localhost:3000/logout", {
+      method: "DELETE",
+    }).then(() => onLogout());
+    setProfile(false);
+    console.log("logged out");
+    navigate("/login");
   };
 
   return (
@@ -31,10 +36,10 @@ const Navbar = () => {
       </nav>
 
       {/* login */}
-      {currentUser ? (
+      {isLoggedin ? (
         <div className="user_profile">
           <img
-            src={currentUser.profile}
+            src={user.profile_image}
             alt=""
             className="user_profile-pic"
             onClick={() => setProfile((prevState) => !prevState)}
@@ -48,7 +53,7 @@ const Navbar = () => {
               >
                 My profile
               </Link>
-              {currentUser?.is_admin && (
+              {user?.is_admin && (
                 <Link
                   className="user_profile-link"
                   onClick={() => setProfile((prev) => !prev)}
@@ -64,7 +69,9 @@ const Navbar = () => {
               >
                 Dashboard
               </Link>
-              <button className="user_profile-btn">Logout</button>
+              <button className="user_profile-btn" onClick={handleLogout}>
+                Logout
+              </button>
             </div>
           )}
         </div>
