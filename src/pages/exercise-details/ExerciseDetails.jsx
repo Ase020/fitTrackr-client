@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { bodyPart, equipment, exerciseDesc, exerciseGif } from "../../assets";
 import "./exercise-details.css";
 import { useEffect, useState } from "react";
@@ -28,8 +28,14 @@ const RelatedExercise = () => (
 
 const ExerciseDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [workoutProgress, setWorkoutProgress] = useState("before");
   const [loading, setLoading] = useState(false);
+  const [workoutName, setWorkoutName] = useState("");
+  const [targetReps, setTargetReps] = useState(0);
+  const [targetDuration, setTargetDuration] = useState(0);
+  const [repsAchieved, setRepsAchieved] = useState(0);
+  const [durationAchieved, setDurationAchieved] = useState(0);
 
   const [exercise, setExercise] = useState({});
 
@@ -40,8 +46,35 @@ const ExerciseDetails = () => {
   }, [id]);
 
   // console.log(exercise);
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("user_id", 1);
+    formData.append("exercise_id", exercise?.id);
+    formData.append("intensity_target", targetReps);
+    formData.append("time_target", targetDuration);
+    formData.append("intensity_achieved", repsAchieved);
+    formData.append("time_taken", durationAchieved);
+
+    console.log("formData: ", formData);
+
+    try {
+      const res = await fetch(`http://127.0.0.1:3000/users/${1}/workouts`, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (res.ok) {
+        console.log("workout saved successfully!");
+        navigate("/workouts");
+      } else {
+        const data = await res.json();
+        console.log("Error1: " + data.errors);
+      }
+    } catch (error) {
+      console.log("Error2: ", error);
+    }
   };
 
   const startExercise = () => {
@@ -74,7 +107,7 @@ const ExerciseDetails = () => {
             }
             onClick={() => setWorkoutProgress("target")}
           >
-            Workout
+            Start workout
           </button>
         </div>
 
@@ -124,6 +157,7 @@ const ExerciseDetails = () => {
       {loading ? (
         <div className="loader_container">
           <Loader />
+          <p>In progress...</p>
         </div>
       ) : (
         <div
@@ -143,12 +177,24 @@ const ExerciseDetails = () => {
               startExercise();
             }}
           >
+            <label className="set_taget-label">Name</label>
+            <input
+              type="text"
+              placeholder={exercise?.name}
+              className="set_target-input"
+              value={workoutName}
+              onChange={(e) => setWorkoutName(e.target.value)}
+              required
+            />
+
             <label className="set_taget-label">Reps</label>
             <input
               type="number"
               min={0}
               placeholder="reps"
               className="set_target-input"
+              value={targetReps}
+              onChange={(e) => setTargetReps(e.target.value)}
               required
             />
 
@@ -158,6 +204,8 @@ const ExerciseDetails = () => {
               min={0}
               placeholder="10 minutes"
               className="set_target-input"
+              value={targetDuration}
+              onChange={(e) => setTargetDuration(e.target.value)}
               required
             />
 
@@ -186,6 +234,8 @@ const ExerciseDetails = () => {
             min={0}
             placeholder="reps"
             className="set_target-input"
+            value={repsAchieved}
+            onChange={(e) => setRepsAchieved(e.target.value)}
             required
           />
 
@@ -195,6 +245,8 @@ const ExerciseDetails = () => {
             min={0}
             placeholder="10 minutes"
             className="set_target-input"
+            value={durationAchieved}
+            onChange={(e) => setDurationAchieved(e.target.value)}
             required
           />
 
