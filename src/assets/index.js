@@ -20,6 +20,7 @@ import equipment from "./equipment.svg";
 import signUp from "./signup image.png";
 import googleIcon from "./google-icon.svg";
 import login1 from "./login1.png";
+import userPic from "./user-pic.png";
 import profile from "./profile-cover.jpg";
 
 export {
@@ -46,4 +47,5 @@ export {
   googleIcon,
   login1,
   profile,
+  userPic,
 };
