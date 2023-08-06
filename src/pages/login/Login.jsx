@@ -12,12 +12,12 @@ const Login = ({ onLogin }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
+
     // Send login request to the server
     fetch("http://localhost:3000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Cookie: document.cookie,
       },
       body: JSON.stringify({ email, password }),
     })
