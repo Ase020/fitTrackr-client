@@ -1,36 +1,37 @@
 /* eslint-disable react/prop-types */
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 import { googleIcon, signUp } from "../../assets";
 import "./signup1.css";
 
 const Signup1 = ({
-  onLogin,
+  // onLogin,
   email,
   setEmail,
   password,
   setPassword,
   passwordConfirmation,
   setPasswordConfirmation,
+  setShowPage,
 }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    fetch("http://localhost:3000/signup", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-        password_confirmation: passwordConfirmation,
-      }),
-    })
-      .then((res) => res.json())
-      .then(onLogin);
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   fetch("http://localhost:3000/signup", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({
+  //       email: email,
+  //       password: password,
+  //       password_confirmation: passwordConfirmation,
+  //     }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then(onLogin);
 
-    navigate("/login");
-  }
+  //   navigate("/login");
+  // }
 
   return (
     <div className="signup-container">
@@ -44,14 +45,12 @@ const Signup1 = ({
         </div>
         <div className="form-for-container">
           <h2>Sign up</h2>
-          <form className="Form" onSubmit={handleSubmit} autoComplete="on">
+          <form className="Form" autoComplete="on">
             <div className="forms-group">
               <label>Email Address</label>
               <input
                 className="sign_page-inputs"
                 type="email"
-                id="email"
-                name="email"
                 placeholder="jondoe123@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -64,8 +63,6 @@ const Signup1 = ({
               <input
                 className="sign_page-inputs"
                 type="password"
-                id="password"
-                name="password"
                 placeholder="Enter your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -77,8 +74,6 @@ const Signup1 = ({
               <input
                 className="sign_page-inputs"
                 type="password"
-                id="confirmPassword"
-                name="confirmPassword"
                 placeholder="Confirm your password"
                 value={passwordConfirmation}
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
@@ -86,7 +81,13 @@ const Signup1 = ({
                 required
               />
             </div>
-            <button className="submit-button" type="submit">
+            <button
+              className="submit-button"
+              type="submit"
+              onClick={() => {
+                setShowPage("profile");
+              }}
+            >
               Signup
             </button>
           </form>

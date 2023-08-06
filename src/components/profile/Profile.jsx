@@ -5,7 +5,6 @@ import "./profile.css";
 const Profile = ({
   username,
   setUsername,
-  profile,
   setProfile,
   gender,
   setGender,
@@ -15,7 +14,13 @@ const Profile = ({
   setWeight,
   height,
   setHeight,
+  handleSubmit = { handleSubmit },
 }) => {
+  const handleChange = (e) => {
+    e.persist();
+    setProfile(e.target.files[0]);
+  };
+
   return (
     <div className="user_profile_container">
       <div className="user_profile_section_1" />
@@ -25,12 +30,17 @@ const Profile = ({
         <div className="user_profile_form-container profile_form">
           <h3 className="user_profile-header">Fill in your bio</h3>
 
-          <form className="user_profile_form-wrapper">
+          <form className="user_profile_form-wrapper" onSubmit={handleSubmit}>
             <div className="form_wrapper user_profile-image_wrapper">
               <label className="form_label user_profile-image-label">
                 <img src={userPic} alt="user-pic" className="form_label-img" />
               </label>
-              <input type="file" required className="form_input-file" />
+              <input
+                type="file"
+                required
+                className="form_input-file"
+                onChange={handleChange}
+              />
             </div>
 
             <div className="form_wrapper">
