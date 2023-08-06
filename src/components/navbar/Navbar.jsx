@@ -51,7 +51,7 @@ const Navbar = ({ user, onLogout, isLoggedin }) => {
                 onClick={() => setProfile((prev) => !prev)}
                 to="/myprofile"
               >
-                My profile
+                {user?.username}
               </Link>
               {user?.is_admin && (
                 <Link

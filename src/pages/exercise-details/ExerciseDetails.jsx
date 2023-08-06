@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useParams, useNavigate } from "react-router-dom";
 import { bodyPart, equipment, exerciseDesc, exerciseGif } from "../../assets";
 import "./exercise-details.css";
@@ -43,8 +44,17 @@ const ExerciseDetails = () => {
 
   useEffect(() => {
     fetch(`http://localhost:3000/exercises/${id}`)
-      .then((res) => res.json())
-      .then(setExercise);
+      .then((res) => {
+        if (res.ok) {
+          res.json().then(setExercise);
+        } else {
+          navigate("/login");
+        }
+      })
+
+      .catch((err) => {
+        console.log(err);
+      });
   }, [id]);
 
   // console.log(exercise);
@@ -52,6 +62,7 @@ const ExerciseDetails = () => {
     e.preventDefault();
 
     const formData = new FormData();
+    formData.append("name", workoutName);
     formData.append("user_id", user?.id);
     formData.append("exercise_id", exercise?.id);
     formData.append("intensity_target", targetReps);
@@ -72,6 +83,7 @@ const ExerciseDetails = () => {
 
       if (res.ok) {
         console.log("workout saved successfully!");
+        res.json().then((data) => console.log(data));
         navigate("/workouts");
       } else {
         const data = await res.json();
