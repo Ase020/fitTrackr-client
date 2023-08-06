@@ -40,7 +40,7 @@ const Signup = ({ onLogin }) => {
       .then((res) => res.json())
       .then(onLogin);
 
-    navigate("/login");
+    navigate("/exercises");
   }
 
   return (
