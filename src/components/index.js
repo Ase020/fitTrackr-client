@@ -8,6 +8,8 @@ import { default as ProgressCircle } from "./progress-circle/ProgressCircle";
 import { default as WorkoutCard } from "./workoutCard/WorkoutCard";
 import { default as LineChartContainer } from "./lineChartContainer/LineChartContainer";
 import { default as Loader } from "./loader/Loader";
+import { default as Profile } from "./profile/Profile";
+import { default as Signup1 } from "./signup1/Signup1";
 
 export {
   Navbar,
@@ -20,4 +22,6 @@ export {
   WorkoutCard,
   LineChartContainer,
   Loader,
+  Profile,
+  Signup1,
 };

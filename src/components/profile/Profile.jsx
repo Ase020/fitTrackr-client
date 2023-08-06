@@ -1,7 +1,21 @@
-import { profile, userPic } from "../../assets";
+/* eslint-disable react/prop-types */
+import { profilePic, userPic } from "../../assets";
 import "./profile.css";
 
-const Profile = () => {
+const Profile = ({
+  username,
+  setUsername,
+  profile,
+  setProfile,
+  gender,
+  setGender,
+  dob,
+  setDob,
+  weight,
+  setWeight,
+  height,
+  setHeight,
+}) => {
   return (
     <div className="user_profile_container">
       <div className="user_profile_section_1" />
@@ -26,16 +40,22 @@ const Profile = () => {
                 type="text"
                 className="form_input"
                 placeholder="f.olali"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               />
             </div>
 
             <div className="form_wrapper">
               <label className="form_label-input">Gender</label>
-              <select className="form_select form_input">
-                <option value="1" className="form_options">
+              <select
+                className="form_select form_input"
+                value={gender}
+                onChange={(e) => setGender(e.target.value)}
+              >
+                <option value="Male" className="form_options">
                   Male
                 </option>
-                <option value="1" className="form_options">
+                <option value="Female" className="form_options">
                   Female
                 </option>
               </select>
@@ -48,6 +68,8 @@ const Profile = () => {
                 required
                 type="date"
                 className="form_input form_input-date"
+                value={dob}
+                onChange={(e) => setDob(e.target.value)}
               />
             </div>
 
@@ -59,6 +81,8 @@ const Profile = () => {
                 type="number"
                 placeholder="62"
                 className="form_input"
+                value={weight}
+                onChange={(e) => setWeight(e.target.value)}
               />
             </div>
 
@@ -70,6 +94,8 @@ const Profile = () => {
                 type="number"
                 placeholder="174"
                 className="form_input"
+                value={height}
+                onChange={(e) => setHeight(e.target.value)}
               />
             </div>
 
@@ -80,7 +106,7 @@ const Profile = () => {
         </div>
 
         <div className="user_profile_form-container">
-          <img src={profile} alt="profile" className="user_profile_img" />
+          <img src={profilePic} alt="profile" className="user_profile_img" />
         </div>
       </div>
     </div>
