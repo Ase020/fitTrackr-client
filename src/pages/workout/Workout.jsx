@@ -4,7 +4,6 @@ import "./workout.css";
 import { convertWorkoutData } from "../../utils";
 import { useContext } from "react";
 import { WorkoutContext } from "../../context/workouts";
-import { mockDataWorkouts } from "../../constants";
 
 const Workout = () => {
   const [workouts] = useContext(WorkoutContext);
@@ -50,6 +49,8 @@ const Workout = () => {
   ];
 
   const data = convertWorkoutData(workouts);
+
+  console.log(data);
 
   return (
     <div className="workout_container">
