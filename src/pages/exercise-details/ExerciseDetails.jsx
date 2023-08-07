@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useParams, useNavigate } from "react-router-dom";
 import { bodyPart, equipment, exerciseDesc, exerciseGif } from "../../assets";
@@ -70,8 +71,6 @@ const ExerciseDetails = () => {
     formData.append("intensity_achieved", repsAchieved);
     formData.append("time_taken", durationAchieved);
 
-    console.log("formData: ", formData);
-
     try {
       const res = await fetch(
         `http://127.0.0.1:3000/users/${user?.id}/workouts`,
@@ -82,9 +81,11 @@ const ExerciseDetails = () => {
       );
 
       if (res.ok) {
-        console.log("workout saved successfully!");
-        res.json().then((data) => console.log(data));
-        navigate("/workouts");
+        alert("Workout saved successfully!");
+        res.json().then((data) => {
+          console.log(data);
+        });
+        navigate("/exercises");
       } else {
         const data = await res.json();
         console.log("Error1: " + data.errors);
