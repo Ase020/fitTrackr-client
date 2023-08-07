@@ -1,8 +1,36 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./hero-section.css";
 import { apple, espirit, heroImg, nb, nike } from "../../assets";
 
+// this is for the scroll functionality
 const HeroSection = () => {
+  const [isBottom, setIsBottom] = useState(false);
+
+  const handleScroll = () => {
+    const windowHeight = window.innerHeight;
+    const docHeight = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.documentElement.clientHeight
+    );
+
+    const scrollTop =
+      (document.documentElement && document.documentElement.scrollTop) ||
+      document.body.scrollTop;
+
+    if (scrollTop + windowHeight >= docHeight) {
+      setIsBottom(true);
+    } else {
+      setIsBottom(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section className="home_hero-section">
       <div className="hero_section-container">
@@ -34,6 +62,15 @@ const HeroSection = () => {
       </div>
 
       <img src={heroImg} alt="hero-section-img" className="hero_section-img" />
+      {!isBottom && (
+        <div className="scroll-arrow-container">
+          <svg className="arrows" viewBox="0 0 60 72">
+            <path className="a1" d="M0 0 L30 32 L60 0"></path>
+            <path className="a2" d="M0 20 L30 52 L60 20"></path>
+            <path className="a3" d="M0 40 L30 72 L60 40"></path>
+          </svg>
+        </div>
+      )}
     </section>
   );
 };
