@@ -2,6 +2,7 @@ import { DataGrid } from "@mui/x-data-grid";
 
 import "./workout.css";
 import { mockDataWorkouts as data } from "../../constants";
+import { convertWorkoutData } from "../../utils";
 
 const Workout = () => {
   const columns = [
@@ -43,6 +44,8 @@ const Workout = () => {
       flex: 1,
     },
   ];
+
+  // const data = convertWorkoutData(mockDataWorkouts);
 
   return (
     <div className="workout_container">

@@ -18,29 +18,50 @@ const Signup = ({ onLogin }) => {
 
   const navigate = useNavigate();
 
-  const userObj = {
-    email,
-    username,
-    password,
-    password_confirmation: passwordConfirmation,
-    profile_image: profile,
-    gender,
-    dob,
-    weight,
-    height,
-  };
+  // const userObj = {
+  //   email,
+  //   username,
+  //   password,
+  //   password_confirmation: passwordConfirmation,
+  //   profile_image: profile,
+  //   gender,
+  //   dob,
+  //   weight,
+  //   height,
+  // };
+
+  const formData = new FormData();
+  formData.append("username", username);
+  formData.append("email", email);
+  formData.append("password", password);
+  formData.append("password_confirmation", passwordConfirmation);
+  formData.append("profile_image", profile);
+  formData.append("gender", gender);
+  formData.append("dob", dob);
+  formData.append("weight", weight);
+  formData.append("height", height);
 
   function handleSubmit(e) {
     e.preventDefault();
     fetch("http://localhost:3000/signup", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(userObj),
+      // headers: { "Content-Type": "application/json" },
+      // body: JSON.stringify(formData),
+      body: formData,
     })
-      .then((res) => res.json())
-      .then(onLogin);
-
-    navigate("/exercises");
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Invalid credentials");
+        }
+        return res.json();
+      })
+      .then((user) => {
+        onLogin(user);
+        navigate("/exercises");
+      })
+      .catch((error) => {
+        console.error("Signup failed:", error);
+      });
   }
 
   return (
