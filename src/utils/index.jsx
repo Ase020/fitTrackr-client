@@ -1,10 +1,49 @@
-const today = new Date();
+// const today = new Date();
 
-const year = today.getFullYear();
-const month = String(today.getMonth() + 1).padStart(2, "0");
-const day = String(today.getDate()).padStart(2, "0");
+// const year = today.getFullYear();
+// const month = String(today.getMonth() + 1).padStart(2, "0");
+// const day = String(today.getDate()).padStart(2, "0");
 
-export const formattedDate = `${year}-${month}-${day}`;
+// export const formattedDate = `${year}-${month}-${day}`;
+export const columns = [
+  {
+    field: "id",
+    headerName: "ID",
+  },
+  {
+    field: "name",
+    headerName: "Name",
+    flex: 1,
+    cellClassName: "name-column--cell",
+  },
+  {
+    field: "exercise",
+    headerName: "Exercise",
+    flex: 1,
+  },
+  {
+    field: "target",
+    headerName: "Target",
+    flex: 0.5,
+  },
+  {
+    field: "achieved",
+    headerName: "Achieved",
+    flex: 0.5,
+  },
+  {
+    field: "percentage",
+    headerName: "Percentage",
+    headerAlign: "left",
+    align: "left",
+    renderCell: (params) => <div>{params.row.percentage}%</div>,
+  },
+  {
+    field: "date",
+    headerName: "Date",
+    flex: 1,
+  },
+];
 
 function formatDate(dateString) {
   const dateObj = new Date(dateString);
@@ -31,7 +70,7 @@ export function convertWorkoutData(data) {
       target: item.intensity_target,
       achieved: item.intensity_achieved,
       duration: item.time_taken,
-      percentage: percentage,
+      percentage: Math.round(percentage),
       date: date,
     };
   });

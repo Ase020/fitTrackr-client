@@ -1,56 +1,15 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { DataGrid } from "@mui/x-data-grid";
 
 import "./workout.css";
-import { convertWorkoutData } from "../../utils";
-import { useContext } from "react";
+import { columns, convertWorkoutData } from "../../utils";
 import { WorkoutContext } from "../../context/workouts";
 
 const Workout = () => {
   const [workouts] = useContext(WorkoutContext);
 
-  const columns = [
-    {
-      field: "id",
-      headerName: "ID",
-    },
-    {
-      field: "name",
-      headerName: "Name",
-      flex: 1,
-      cellClassName: "name-column--cell",
-    },
-    {
-      field: "exercise",
-      headerName: "Exercise",
-      flex: 1,
-    },
-    {
-      field: "target",
-      headerName: "Target",
-      flex: 0.5,
-    },
-    {
-      field: "achieved",
-      headerName: "Achieved",
-      flex: 0.5,
-    },
-    {
-      field: "percentage",
-      headerName: "Percentage",
-      headerAlign: "left",
-      align: "left",
-      renderCell: (params) => <div>{params.row.percentage}%</div>,
-    },
-    {
-      field: "date",
-      headerName: "Date",
-      flex: 1,
-    },
-  ];
-
   const data = convertWorkoutData(workouts);
-
-  console.log(data);
 
   return (
     <div className="workout_container">
@@ -61,10 +20,15 @@ const Workout = () => {
         </p>
       </div>
       <div className="workout_table-container">
-        {workouts ? (
+        {workouts.length > 0 ? (
           <DataGrid rows={data} columns={columns} checkboxSelection />
         ) : (
-          <p>No workout data</p>
+          <div className="no_workout_container">
+            <h2 className="no_workout-header">No workouts records</h2>
+            <Link to="/exercises" className="no_workout-link">
+              Add workout
+            </Link>
+          </div>
         )}
       </div>
     </div>

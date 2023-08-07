@@ -18,7 +18,7 @@ export const WorkoutProvider = ({ children }) => {
       .catch((err) => {
         console.log(err);
       });
-  }, [user]);
+  }, [user?.id, workouts.length]);
 
   const value = [workouts, setWorkouts];
 
