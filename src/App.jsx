@@ -14,7 +14,6 @@ import {
   Exercises,
   ExerciseDetails,
   Dashboard,
-  Profile,
   Workout,
   AddExercise,
   Myprofile,
@@ -70,10 +69,7 @@ const App = () => {
           path: "/dashboard",
           element: <Dashboard />,
         },
-        {
-          path: "/profile",
-          element: <Profile />,
-        },
+
         {
           path: "/myprofile",
           element: <Myprofile />,

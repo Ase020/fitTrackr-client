@@ -94,7 +94,7 @@
 .sign_page-inputs:not(:placeholder-shown) {
   background-color: #fff;
 }
-button {
+.login-btn {
   color: #78ce91;
   background-color: #0e3848;
   font-size: 16px;
@@ -109,7 +109,7 @@ button {
   border-radius: 7px;
   border: 1px solid var(--login-color, #78ce91);
 }
-button:hover {
+.login-btn:hover {
   color: #fff;
   background-color: #28bb7b;
   transition: all 0.5s ease-in;

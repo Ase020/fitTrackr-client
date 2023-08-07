@@ -2,104 +2,79 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { googleIcon, signUp } from "../../assets";
-import "./signup.css";
+import { Profile, Signup1 } from "../../components";
 
 const Signup = ({ onLogin }) => {
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [profile, setProfile] = useState(null);
+  const [gender, setGender] = useState("Male");
+  const [dob, setDob] = useState("2000-01-01");
+  const [weight, setWeight] = useState(0);
+  const [height, setHeight] = useState(0);
+  const [showPage, setShowPage] = useState("signup1");
+
   const navigate = useNavigate();
+
+  const userObj = {
+    email,
+    username,
+    password,
+    password_confirmation: passwordConfirmation,
+    profile_image: profile,
+    gender,
+    dob,
+    weight,
+    height,
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
     fetch("http://localhost:3000/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-        password_confirmation: passwordConfirmation,
-      }),
+      body: JSON.stringify(userObj),
     })
       .then((res) => res.json())
       .then(onLogin);
 
-    navigate("/login");
+    navigate("/exercises");
   }
 
   return (
-    <div className="signup-container">
-      <div className="signup-wrapper">
-        <div className="image-container-wrapper">
-          <img
-            src={signUp}
-            alt="Signup-image"
-            className="signup-image-container-image"
-          />
-        </div>
-        <div className="form-for-container">
-          <h2>Sign up</h2>
-          <form className="Form" onSubmit={handleSubmit} autoComplete="on">
-            <div className="forms-group">
-              <label>Email Address</label>
-              <input
-                className="sign_page-inputs"
-                type="email"
-                id="email"
-                name="email"
-                placeholder="jondoe123@example.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                autoComplete="email"
-                required
-              />
-            </div>
-            <div className="forms-group">
-              <label>Password</label>
-              <input
-                className="sign_page-inputs"
-                type="password"
-                id="password"
-                name="password"
-                placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-            <div className="forms-group">
-              <label>Confirm Password</label>
-              <input
-                className="sign_page-inputs"
-                type="password"
-                id="confirmPassword"
-                name="confirmPassword"
-                placeholder="Confirm your password"
-                value={passwordConfirmation}
-                onChange={(e) => setPasswordConfirmation(e.target.value)}
-                autoComplete="password"
-                required
-              />
-            </div>
-            <button className="submit-button" type="submit">
-              Signup
-            </button>
-          </form>
-          <div id="or">or</div>
-          <div className="google-signup">
-            <img src={googleIcon} alt="Google-icon" className="google-icon" />
-            <p>Google</p>
-          </div>
-          <p className="have-account">
-            Already have an account?{" "}
-            <a className="login-shortcut" href="/login">
-              Login
-            </a>
-          </p>
-        </div>
-      </div>
-    </div>
+    <>
+      {showPage === "signup1" ? (
+        <Signup1
+          // onLogin={onLogin}
+          email={email}
+          setEmail={setEmail}
+          password={password}
+          setPassword={setPassword}
+          passwordConfirmation={passwordConfirmation}
+          setPasswordConfirmation={setPasswordConfirmation}
+          setShowPage={setShowPage}
+        />
+      ) : (
+        <Profile
+          username={username}
+          setUsername={setUsername}
+          profile={profile}
+          setProfile={setProfile}
+          gender={gender}
+          setGender={setGender}
+          dob={dob}
+          setDob={setDob}
+          weight={weight}
+          setWeight={setWeight}
+          height={height}
+          setHeight={setHeight}
+          handleSubmit={handleSubmit}
+        />
+      )}
+    </>
   );
 };
+
 export default Signup;
