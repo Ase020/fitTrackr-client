@@ -81,7 +81,7 @@ const ExerciseDetails = () => {
       );
 
       if (res.ok) {
-        console.log("workout saved successfully!");
+        alert("Workout saved successfully!");
         res.json().then((data) => {
           console.log(data);
         });
