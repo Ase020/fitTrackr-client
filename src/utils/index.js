@@ -14,7 +14,7 @@ export function convertWorkoutData(data) {
     return {
       id: item.id,
       name: item.name,
-      exercise: "exercise " + String.fromCharCode(96 + item.exercise_id), // "a" corresponds to exercise_id 1, "b" to 2, and so on.
+      exercise: item.exercise?.name,
       target: item.intensity_target,
       achieved: item.intensity_achieved,
       duration: item.time_taken,

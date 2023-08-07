@@ -1,10 +1,14 @@
 import { DataGrid } from "@mui/x-data-grid";
 
 import "./workout.css";
-import { mockDataWorkouts as data } from "../../constants";
 import { convertWorkoutData } from "../../utils";
+import { useContext } from "react";
+import { WorkoutContext } from "../../context/workouts";
+import { mockDataWorkouts } from "../../constants";
 
 const Workout = () => {
+  const [workouts] = useContext(WorkoutContext);
+
   const columns = [
     {
       field: "id",
@@ -45,7 +49,7 @@ const Workout = () => {
     },
   ];
 
-  // const data = convertWorkoutData(mockDataWorkouts);
+  const data = convertWorkoutData(workouts);
 
   return (
     <div className="workout_container">
@@ -56,7 +60,11 @@ const Workout = () => {
         </p>
       </div>
       <div className="workout_table-container">
-        <DataGrid rows={data} columns={columns} checkboxSelection />
+        {workouts ? (
+          <DataGrid rows={data} columns={columns} checkboxSelection />
+        ) : (
+          <p>No workout data</p>
+        )}
       </div>
     </div>
   );
