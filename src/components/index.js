@@ -10,6 +10,7 @@ import { default as LineChartContainer } from "./lineChartContainer/LineChartCon
 import { default as Loader } from "./loader/Loader";
 import { default as Profile } from "./profile/Profile";
 import { default as Signup1 } from "./signup1/Signup1";
+import { default as UserRow } from "./user-row/UserRow";
 
 export {
   Navbar,
@@ -24,4 +25,5 @@ export {
   Loader,
   Profile,
   Signup1,
+  UserRow,
 };

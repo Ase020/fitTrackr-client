@@ -67,4 +67,5 @@ td {
 
 .td_input-checkbox {
   accent-color: #3e4396;
+  cursor: pointer;
 }
