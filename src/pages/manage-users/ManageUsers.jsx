@@ -5,6 +5,7 @@ import "./manage-users.css";
 const TableHead = () => (
   <thead className="thead">
     <tr>
+      <th>Avatar</th>
       <th>Email</th>
       <th>Username</th>
       <th>Gender</th>

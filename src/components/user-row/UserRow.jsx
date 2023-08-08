@@ -7,6 +7,7 @@ import {
   formatDate,
 } from "../../utils";
 import "./user-row.css";
+import { avatar } from "../../assets";
 
 const UserRow = ({ user }) => {
   const [checked, setChecked] = useState(user?.is_admin);
@@ -23,6 +24,13 @@ const UserRow = ({ user }) => {
 
   return (
     <tr>
+      <td className="td_email" data-label="Email">
+        <img
+          src={user.profile_image || avatar}
+          alt="user-profile"
+          className="user_avatar"
+        />
+      </td>
       <td className="td_email" data-label="Email">
         {user.email}
       </td>
