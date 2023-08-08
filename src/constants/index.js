@@ -210,5 +210,5 @@ export const quotes = [
   "You don't have to be great to start, but you have to start to be great. - Zig Ziglar",
   "Fitness is not a destination, it's a journey. - Unknown",
   "The best way to predict your future is to create it. - Abraham Lincoln",
-  "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill"
+  "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
 ];

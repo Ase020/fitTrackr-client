@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import { hamburger, logo } from "../../assets";
+import { avatar, logo } from "../../assets";
 import "./navbar.css";
 
 const Navbar = ({ user, onLogout, isLoggedin }) => {
@@ -50,7 +50,7 @@ const Navbar = ({ user, onLogout, isLoggedin }) => {
       {isLoggedin ? (
         <div className="user_profile">
           <img
-            src={user.profile_image}
+            src={user.profile_image || avatar}
             alt=""
             className="user_profile-pic"
             onClick={() => setProfile((prevState) => !prevState)}
@@ -71,14 +71,31 @@ const Navbar = ({ user, onLogout, isLoggedin }) => {
               >
                 {user?.username}
               </Link>
+              <Link
+                className="user_profile-link"
+                onClick={() => setProfile((prev) => !prev)}
+                to="/my-fitness"
+              >
+                my fitness
+              </Link>
               {user?.is_admin && (
-                <Link
-                  className="user_profile-link"
-                  onClick={() => setProfile((prev) => !prev)}
-                  to="/add-exercise"
-                >
-                  Add Exercise
-                </Link>
+                <>
+                  <Link
+                    className="user_profile-link"
+                    onClick={() => setProfile((prev) => !prev)}
+                    to="/add-exercise"
+                  >
+                    Add Exercise
+                  </Link>
+
+                  <Link
+                    className="user_profile-link"
+                    onClick={() => setProfile((prev) => !prev)}
+                    to="/users"
+                  >
+                    Manage users
+                  </Link>
+                </>
               )}
               <Link
                 className="user_profile-link"

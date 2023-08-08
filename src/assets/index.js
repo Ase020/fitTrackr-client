@@ -23,6 +23,7 @@ import login1 from "./login1.png";
 import userPic from "./user-pic.png";
 import profilePic from "./profile-cover.jpg";
 import hamburger from "./hamburger-menu.svg";
+import avatar from "./user_avatar.svg";
 
 export {
   logo,
@@ -50,4 +51,5 @@ export {
   profilePic,
   userPic,
   hamburger,
+  avatar,
 };

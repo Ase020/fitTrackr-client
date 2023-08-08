@@ -45,13 +45,12 @@ export const columns = [
   },
 ];
 
-function formatDate(dateString) {
+export function formatDate(dateString) {
   const dateObj = new Date(dateString);
   const day = dateObj.getUTCDate();
-  const month = dateObj.getUTCMonth() + 1; // Months are zero-based, so add 1 to get the correct month
+  const month = dateObj.getUTCMonth() + 1;
   const year = dateObj.getUTCFullYear();
 
-  // Pad single-digit day and month with leading zeros if needed
   const formattedDay = day < 10 ? `0${day}` : `${day}`;
   const formattedMonth = month < 10 ? `0${month}` : `${month}`;
 
@@ -89,4 +88,53 @@ export function topWorkoutFn(data) {
 export function recentWorkoutsFn(data) {
   data.sort((a, b) => new Date(b.date) - new Date(a.date));
   return data.slice(0, 5);
+}
+
+// age calculator
+export function ageCalculator(dob) {
+  const birthDate = new Date(dob);
+  const currentDate = new Date();
+
+  const yearsDiff = currentDate.getFullYear() - birthDate.getFullYear();
+  const monthsDiff = currentDate.getMonth() - birthDate.getMonth();
+
+  if (
+    monthsDiff < 0 ||
+    (monthsDiff === 0 && currentDate.getDate() < birthDate.getDate())
+  ) {
+    return yearsDiff - 1;
+  } else {
+    return yearsDiff;
+  }
+}
+
+// bmi calculator
+export function bMICalculator(height, weight) {
+  const heightM = height / 100;
+
+  const bmi = weight / (heightM * heightM);
+
+  return bmi.toFixed(2);
+}
+
+// BMI Interpreter
+export function bMIInterpreter(bmi) {
+  switch (true) {
+    case bmi < 16.0:
+      return "Severely Underweight";
+    case bmi >= 16.0 && bmi < 17.0:
+      return "Underweight";
+    case bmi >= 17.0 && bmi < 18.5:
+      return "Mildly Underweight";
+    case bmi >= 18.5 && bmi < 25.0:
+      return "Normal (Healthy Weight)";
+    case bmi >= 25.0 && bmi < 30.0:
+      return "Overweight";
+    case bmi >= 30.0 && bmi < 35.0:
+      return "Obese Class I (Moderate)";
+    case bmi >= 35.0 && bmi < 40.0:
+      return "Obese Class II (Severe)";
+    default:
+      return "Obese Class III (Very Severe)";
+  }
 }
