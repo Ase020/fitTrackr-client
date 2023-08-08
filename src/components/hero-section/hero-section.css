@@ -71,3 +71,23 @@
   height: 100%;
   object-fit: cover;
 }
+
+@media (max-width: 768px) {
+  .hero_section-img {
+    display: none;
+  }
+
+  .hero_section-container {
+    padding: 24px;
+  }
+
+  .design_desc-wrapper {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero_section-intro {
+    font-size: 56px;
+  }
+}
