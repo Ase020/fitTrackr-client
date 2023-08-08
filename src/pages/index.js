@@ -10,6 +10,7 @@ import { default as Workout } from "./workout/Workout";
 import { default as AddExercise } from "./add-exercise/AddExercise";
 import { default as Myprofile } from "./my-profile/Myprofile";
 import { default as Signup } from "./signup/Signup";
+import { default as ManageUsers } from "./manage-users/ManageUsers";
 
 export {
   Home,
@@ -24,4 +25,5 @@ export {
   Workout,
   AddExercise,
   Myprofile,
+  ManageUsers,
 };

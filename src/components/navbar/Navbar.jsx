@@ -54,13 +54,23 @@ const Navbar = ({ user, onLogout, isLoggedin }) => {
                 {user?.username}
               </Link>
               {user?.is_admin && (
-                <Link
-                  className="user_profile-link"
-                  onClick={() => setProfile((prev) => !prev)}
-                  to="/add-exercise"
-                >
-                  Add Exercise
-                </Link>
+                <>
+                  <Link
+                    className="user_profile-link"
+                    onClick={() => setProfile((prev) => !prev)}
+                    to="/add-exercise"
+                  >
+                    Add Exercise
+                  </Link>
+
+                  <Link
+                    className="user_profile-link"
+                    onClick={() => setProfile((prev) => !prev)}
+                    to="/users"
+                  >
+                    Manage users
+                  </Link>
+                </>
               )}
               <Link
                 className="user_profile-link"

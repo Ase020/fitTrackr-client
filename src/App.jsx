@@ -17,6 +17,7 @@ import {
   Workout,
   AddExercise,
   Myprofile,
+  ManageUsers,
 } from "./pages";
 
 const App = () => {
@@ -85,6 +86,10 @@ const App = () => {
         {
           path: "/login/password_reset",
           element: <PasswordReset />,
+        },
+        {
+          path: "/users",
+          element: <ManageUsers />,
         },
       ],
     },
