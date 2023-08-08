@@ -32,7 +32,7 @@ const Navbar = ({ user, onLogout, isLoggedin }) => {
         <Link to="/">Home</Link>
         <Link to="/exercises">Exercises</Link>
         <Link to="/membership">Membership</Link>
-        <Link to="/workouts">My Workouts</Link>
+        {user && <Link to="/workouts">My Workouts</Link>}
       </nav>
 
       {/* login */}

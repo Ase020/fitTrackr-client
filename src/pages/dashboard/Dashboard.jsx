@@ -41,15 +41,19 @@ const Dashboard = () => {
           <div className="recent_workout_container">
             <h5 className="recent_workout-header">top workouts</h5>
 
-            {topWorkouts.map((workout) => (
-              <WorkoutCard
-                key={workout.id}
-                exerciseName={workout.exercise}
-                workoutName={workout.name}
-                date={workout.date}
-                progress={workout.percentage}
-              />
-            ))}
+            {topWorkouts.length > 0 ? (
+              topWorkouts.map((workout) => (
+                <WorkoutCard
+                  key={workout.id}
+                  exerciseName={workout.exercise}
+                  workoutName={workout.name}
+                  date={workout.date}
+                  progress={workout.percentage}
+                />
+              ))
+            ) : (
+              <p>no data</p>
+            )}
           </div>
         </div>
 
@@ -64,15 +68,19 @@ const Dashboard = () => {
           <div className="recent_workout_container">
             <h5 className="recent_workout-header">recent workouts</h5>
 
-            {recentWorkouts.map((workout) => (
-              <WorkoutCard
-                key={workout.id}
-                exerciseName={workout.exercise}
-                workoutName={workout.name}
-                date={workout.date}
-                progress={workout.percentage}
-              />
-            ))}
+            {recentWorkouts.length > 0 ? (
+              recentWorkouts.map((workout) => (
+                <WorkoutCard
+                  key={workout.id}
+                  exerciseName={workout.exercise}
+                  workoutName={workout.name}
+                  date={workout.date}
+                  progress={workout.percentage}
+                />
+              ))
+            ) : (
+              <p>no data</p>
+            )}
           </div>
         </div>
       </div>
