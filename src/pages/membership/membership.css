@@ -1,0 +1,152 @@
+.info {
+  text-align: center;
+  margin-top: 50px;
+}
+.wrapper {
+  margin-bottom: 100px;
+}
+.par1 {
+  color: #777e90;
+}
+.par2 {
+  font-family: Inter;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 64px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  /* width: 708px; */
+}
+
+.mem-info {
+  display: flex;
+  /* background-color: rgb(46, 50, 50); */
+  padding: 20px 0;
+  border-bottom: 2px solid #23262f;
+}
+.tittle {
+  flex: 1;
+}
+.excamation {
+  flex: 1;
+}
+.check {
+  flex: 1;
+  width: 14px;
+  height: 14px;
+}
+/* .icon {
+  flex: 1;
+  width: 74px;
+  height: 34px;
+} */
+.icon {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dash {
+  width: 7px;
+  height: 2px;
+  background-color: rgb(152, 152, 152);
+}
+img {
+  width: 24px;
+  height: 24px;
+}
+
+.top {
+  display: flex;
+  height: 250px;
+  /* background-color: red; */
+}
+.top2 {
+  display: flex;
+  /* background-color: red; */
+}
+.main-title {
+  flex: 2;
+  /* background-color: blue; */
+  align-self: flex-end;
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 12px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #777e90;
+}
+.col {
+  flex: 1;
+  text-align: center;
+  /* display: flex;
+  flex-direction: column; */
+  /* background-color: rgb(84, 84, 84); */
+}
+.special {
+  /* background-color: #23262f; */
+  /* height: 100%; */
+  /* padding: 20px 0; */
+}
+.first_tittle {
+  font-size: 15px;
+  color: #9757d7;
+  margin-top: 48px;
+  margin-bottom: 15px;
+  margin-left: 35px;
+}
+.second_tittle {
+  font-size: 15px;
+  color: #58a2bd;
+  margin-top: 48px;
+  margin-bottom: 15px;
+  margin-left: 35px;
+}
+.third_tittle {
+  font-size: 15px;
+  color: #78ce91;
+  margin-top: 48px;
+  margin-bottom: 15px;
+  margin-left: 35px;
+}
+.p_text {
+  color: #777e90;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+}
+.sub_p {
+  font-size: 38px;
+  font-weight: bold;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  margin-left: 25px;
+}
+.dollar {
+  font-size: 25px;
+  font-weight: 400;
+}
+.p_month {
+  color: #777e90;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-left: 35px;
+}
+.btn1 {
+  /* padding: 64px, 8px, 64px, 8px; */
+  padding: 10px;
+  background: #007bff;
+  border-radius: 100px;
+  color: aliceblue;
+  border-color: #007bff;
+  margin-top: 50px;
+}
+.btn2 {
+  padding: 10px;
+  background: #0e3848;
+  border-radius: 100px;
+  color: aliceblue;
+  border-color: #777e90;
+  margin-top: 50px;
+}
