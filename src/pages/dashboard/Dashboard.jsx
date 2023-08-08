@@ -19,7 +19,6 @@ const Dashboard = () => {
   const topWorkouts = topWorkoutFn(workoutData);
   const recentWorkouts = recentWorkoutsFn(workoutData);
 
-  console.log("Top: ", topWorkouts);
   return (
     <div className="dashboard_container">
       <div className="dashboard_header-container">
