@@ -22,6 +22,7 @@ import googleIcon from "./google-icon.svg";
 import login1 from "./login1.png";
 import userPic from "./user-pic.png";
 import profilePic from "./profile-cover.jpg";
+import avatar from "./user_avatar.svg";
 
 export {
   logo,
@@ -48,4 +49,5 @@ export {
   login1,
   profilePic,
   userPic,
+  avatar,
 };

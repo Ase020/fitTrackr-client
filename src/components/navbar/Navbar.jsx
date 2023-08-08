@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link, useNavigate } from "react-router-dom";
-import { logo } from "../../assets";
+import { avatar, logo } from "../../assets";
 import "./navbar.css";
 import { useState } from "react";
 
@@ -39,7 +39,7 @@ const Navbar = ({ user, onLogout, isLoggedin }) => {
       {isLoggedin ? (
         <div className="user_profile">
           <img
-            src={user.profile_image}
+            src={user.profile_image || avatar}
             alt=""
             className="user_profile-pic"
             onClick={() => setProfile((prevState) => !prevState)}

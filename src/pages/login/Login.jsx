@@ -32,7 +32,7 @@ const Login = ({ onLogin }) => {
         navigate("/exercises");
       })
       .catch((error) => {
-        console.error("Login failed:", error);
+        alert(error.message);
       });
   }
   return (
