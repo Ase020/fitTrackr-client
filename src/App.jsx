@@ -18,6 +18,7 @@ import {
   AddExercise,
   Myprofile,
   ManageUsers,
+  Fitness,
 } from "./pages";
 
 const App = () => {
@@ -90,6 +91,10 @@ const App = () => {
         {
           path: "/users",
           element: <ManageUsers />,
+        },
+        {
+          path: "/my-fitness",
+          element: <Fitness />,
         },
       ],
     },

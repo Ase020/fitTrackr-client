@@ -53,6 +53,13 @@ const Navbar = ({ user, onLogout, isLoggedin }) => {
               >
                 {user?.username}
               </Link>
+              <Link
+                className="user_profile-link"
+                onClick={() => setProfile((prev) => !prev)}
+                to="/my-fitness"
+              >
+                my fitness
+              </Link>
               {user?.is_admin && (
                 <>
                   <Link
