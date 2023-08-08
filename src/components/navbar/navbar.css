@@ -140,3 +140,18 @@
   background: transparent;
   color: #ef466f;
 }
+
+@media (max-width: 480px) {
+  .navbar-container {
+    justify-content: space-between;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .user_profile,
+  .logon-options {
+    display: none;
+  }
+}
