@@ -19,7 +19,6 @@ const Dashboard = () => {
   const topWorkouts = topWorkoutFn(workoutData);
   const recentWorkouts = recentWorkoutsFn(workoutData);
 
-  console.log("Top: ", topWorkouts);
   return (
     <div className="dashboard_container">
       <div className="dashboard_header-container">
@@ -34,7 +33,7 @@ const Dashboard = () => {
         <div className="dashboard_bmi_user-container">
           <LineChartContainer
             data={weightData}
-            parameter="Weight"
+            parameter="Date"
             paramValue={64}
           />
 
@@ -61,7 +60,7 @@ const Dashboard = () => {
         <div className="dashboard_bmi_user-container">
           <LineChartContainer
             data={bmiData}
-            parameter="BMI"
+            parameter="Date"
             paramValue={19.87}
           />
 
