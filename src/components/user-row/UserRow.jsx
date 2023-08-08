@@ -11,6 +11,7 @@ import { avatar } from "../../assets";
 
 const UserRow = ({ user }) => {
   const [checked, setChecked] = useState(user?.is_admin);
+  const [isLoading, setIsLoading] = useState(false);
 
   const bmi = bMICalculator(user.height, user.weight);
   const healthStatus = bMIInterpreter(bmi);
@@ -19,7 +20,35 @@ const UserRow = ({ user }) => {
 
   const handleEdit = (e) => {
     e.preventDefault();
-    console.log("Clicked:", checked);
+    setIsLoading(true);
+    fetch(`http://localhost:3000/users/${user?.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ is_admin: checked }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error("Failed to update the user!");
+        }
+      })
+      .then((data) => {
+        alert(
+          checked
+            ? `${user.username} is now an admin!`
+            : `${user.username} is no longer an admin!`
+        );
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   return (
@@ -61,8 +90,12 @@ const UserRow = ({ user }) => {
         {joinedDate}
       </td>
       <td className="td_save" data-label="Save">
-        <button className="td_save-btn" onClick={handleEdit}>
-          Save
+        <button
+          className="td_save-btn"
+          onClick={handleEdit}
+          disabled={checked === user?.is_admin || isLoading}
+        >
+          {isLoading ? "Updating..." : "Update"}
         </button>
       </td>
     </tr>

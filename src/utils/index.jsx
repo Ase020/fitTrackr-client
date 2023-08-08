@@ -48,10 +48,9 @@ export const columns = [
 export function formatDate(dateString) {
   const dateObj = new Date(dateString);
   const day = dateObj.getUTCDate();
-  const month = dateObj.getUTCMonth() + 1; // Months are zero-based, so add 1 to get the correct month
+  const month = dateObj.getUTCMonth() + 1;
   const year = dateObj.getUTCFullYear();
 
-  // Pad single-digit day and month with leading zeros if needed
   const formattedDay = day < 10 ? `0${day}` : `${day}`;
   const formattedMonth = month < 10 ? `0${month}` : `${month}`;
 
