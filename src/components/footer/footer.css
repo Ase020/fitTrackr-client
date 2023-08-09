@@ -118,3 +118,30 @@
   width: 24px;
   height: 24px;
 }
+
+@media (max-width: 768px) {
+  .navbar-container{
+    margin: 0px 10px 0px 10px;
+  }
+  .footer-links-logo-wrapper{
+    display: block;
+  }
+  .footer-links{
+    margin: 12px 20px 0px;
+  }
+  .footer-copyright{
+    padding-left: 15px;
+  }
+  .footer-social-links{
+    padding-right: 20px;
+  }
+  .footer-newsletter{
+    margin-right: 20px;
+  }
+  .footer-contact-us{
+    padding-left: 18px;
+  }
+  .footer-newsletter{
+    padding-left: 10px;
+  }
+}

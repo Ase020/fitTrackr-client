@@ -90,4 +90,12 @@
   .hero_section-intro {
     font-size: 56px;
   }
+
+  .endorsed_by-img-container {
+    flex-wrap: wrap;
+  }
+
+  .design_img-wrapper {
+    width: 100%;
+  }
 }

@@ -144,12 +144,26 @@
   }
 }
 
+.hamburger_menu {
+  display: none;
+  padding: 12px;
+}
+
 @media (max-width: 480px) {
   .clean_design-container {
     margin: 0 auto;
+    width: 100%;
   }
 
   .design_img-wrapper {
     padding-left: 24px;
+  }
+
+  .design_img-weight {
+    display: none;
+  }
+
+  .hamburger_menu {
+    display: inline-flex;
   }
 }
