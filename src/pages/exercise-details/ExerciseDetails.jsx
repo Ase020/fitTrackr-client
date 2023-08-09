@@ -44,7 +44,9 @@ const ExerciseDetails = () => {
   const [user] = useContext(UserContext);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/exercises/${id}`)
+    fetch(`http://localhost:3000/exercises/${id}`, {
+      credentials: "include",
+    })
       .then((res) => {
         if (res.ok) {
           res.json().then(setExercise);

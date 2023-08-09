@@ -10,6 +10,11 @@ const Fitness = () => {
 
         <p className="fitness_header-desc">Keep</p>
       </div>
+
+      <div className="fitness_body-container">
+        <div className="fitness_body-form">Form</div>
+        <div className="fitness_body-list">List</div>
+      </div>
     </main>
   );
 };
