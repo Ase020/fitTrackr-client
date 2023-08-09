@@ -1,16 +1,21 @@
+/* eslint-disable react/prop-types */
+import { bMICalculator, bMIInterpreter, formatDate } from "../../utils";
 import "./fitnessRecord.css";
 
-const FitnessRecord = () => {
+const FitnessRecord = ({ fitness }) => {
+  const bmi = bMICalculator(fitness.height, fitness.weight);
+  const healthStatus = bMIInterpreter(bmi);
+  const date = formatDate(fitness.created_at);
   return (
     <>
       <tr className="fitness_record-tr">
-        <td className="fitness_record-td">1</td>
-        <td className="fitness_record-td">64</td>
-        <td className="fitness_record-td">36</td>
-        <td className="fitness_record-td">172</td>
-        <td className="fitness_record-td">19.25</td>
-        <td className="fitness_record-td">Healthy Healthy</td>
-        <td className="fitness_record-td">09/08/2023</td>
+        <td className="fitness_record-td">{fitness.id}</td>
+        <td className="fitness_record-td">{fitness.weight}</td>
+        <td className="fitness_record-td">{fitness.waist_size}</td>
+        <td className="fitness_record-td">{fitness.height}</td>
+        <td className="fitness_record-td">{bmi}</td>
+        <td className="fitness_record-td">{healthStatus}</td>
+        <td className="fitness_record-td">{date}</td>
       </tr>
     </>
   );

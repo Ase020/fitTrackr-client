@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FitnessCard, FitnessRecord } from "../../components";
 import "./fitness.css";
 import { UserContext } from "../../context/user";
@@ -19,9 +19,27 @@ const TableHead = () => (
 
 const Fitness = () => {
   const [user] = useContext(UserContext);
-  let fitnessData = user?.fitnesses;
+  const [fitnesses, setFitnesses] = useState([]);
 
-  console.log(fitnessData);
+  useEffect(() => {
+    fetch(`http://localhost:3000/users/${user?.id}/fitnesses`)
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error("Failed to fetch fitnesses!");
+        }
+      })
+      .then((data) => {
+        setFitnesses(data);
+        console.log(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
+  console.log(fitnesses);
 
   return (
     <main className="fitness_container">
@@ -38,15 +56,17 @@ const Fitness = () => {
       </div>
 
       <div className="fitness_body-container">
-        <FitnessCard userId={user?.id} fitnessData={fitnessData} />
+        <FitnessCard userId={user?.id} fitnesses={fitnesses} />
 
         <div className="fitness_body-list">
-          {fitnessData.length > 0 ? (
+          {fitnesses.length > 0 ? (
             <table className="manage_users_table-container">
               <TableHead />
 
               <tbody className="fitness_tbody">
-                <FitnessRecord />
+                {fitnesses.map((fitness) => (
+                  <FitnessRecord key={fitness.key} fitness={fitness} />
+                ))}
               </tbody>
             </table>
           ) : (
