@@ -36,7 +36,7 @@ const ManageUsers = () => {
       </h4>
 
       <div className="manage_user-table">
-        <table className="mange_users_table-container">
+        <table className="manage_users_table-container">
           <TableHead />
 
           <tbody className="tbody">

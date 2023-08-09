@@ -33,11 +33,22 @@
 
 .fitness_body-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 16px;
 }
 
 .fitness_body-list {
   flex: 3;
-  border: 1px solid green;
+  border: 1px solid #969ea0;
+
+  width: 100%;
+}
+
+.fitness_th {
+  white-space: nowrap;
+}
+
+.no_user_data {
+  white-space: nowrap;
+  padding: 16px;
 }

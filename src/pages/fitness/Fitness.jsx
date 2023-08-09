@@ -1,7 +1,28 @@
+import { useContext } from "react";
 import { FitnessCard, FitnessRecord } from "../../components";
 import "./fitness.css";
+import { UserContext } from "../../context/user";
+
+const TableHead = () => (
+  <thead className="thead fitness_thead">
+    <tr className="fitness_tr">
+      <th className="fitness_th">ID</th>
+      <th className="fitness_th">Weight</th>
+      <th className="fitness_th">Waist size</th>
+      <th className="fitness_th">Height</th>
+      <th className="fitness_th">BMI</th>
+      <th className="fitness_th">Health Status</th>
+      <th className="fitness_th">Date</th>
+    </tr>
+  </thead>
+);
 
 const Fitness = () => {
+  const [user] = useContext(UserContext);
+  let fitnessData = user?.fitnesses;
+
+  console.log(fitnessData);
+
   return (
     <main className="fitness_container">
       <div className="fitness_header-container">
@@ -17,10 +38,20 @@ const Fitness = () => {
       </div>
 
       <div className="fitness_body-container">
-        <FitnessCard />
+        <FitnessCard userId={user?.id} fitnessData={fitnessData} />
 
         <div className="fitness_body-list">
-          <FitnessRecord />
+          {fitnessData.length > 0 ? (
+            <table className="manage_users_table-container">
+              <TableHead />
+
+              <tbody className="fitness_tbody">
+                <FitnessRecord />
+              </tbody>
+            </table>
+          ) : (
+            <p className="no_user_data">No user fitness data</p>
+          )}
         </div>
       </div>
     </main>

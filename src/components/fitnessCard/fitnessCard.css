@@ -1,6 +1,8 @@
 .fitness_body-form {
-  border: 1px solid green;
+  border: 1px solid #969ea0;
+  border-radius: 16px;
   flex: 2;
+  min-width: 240px;
 }
 
 .fitness_form-container {
