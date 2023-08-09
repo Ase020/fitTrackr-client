@@ -166,3 +166,42 @@
   font-style: normal;
   color: #007bff;
 }
+
+/* @media (min-width: 480px) {
+  .login-logo-img{
+    display: none;
+  }
+  .login_container::before{
+    background-color: #346d87;
+  }
+  .form_container{
+    background-color: #0e3848;
+    border-radius: 20px;
+    padding: 10px;
+    gap: 10px;
+  }
+} */
+
+@media (max-width: 768px) {
+  .login-logo-img{
+    display: none;
+  }
+  .login_container::before{
+    background-color:#346d87
+  }
+  .form_container{
+    background-color: #0e3848;
+    border-radius: 20px;
+    gap: 15px;
+    padding: 12px;
+  }
+  .form_container, h2{
+    align-items: center;
+  }
+  .login-btn{
+    padding: 6px 113px;
+  }
+  .google-login{
+    padding: 6px 100px;
+  }
+}

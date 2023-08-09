@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-import { Link, useNavigate } from "react-router-dom";
-import { avatar, logo } from "../../assets";
-import "./navbar.css";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { hamburger, logo, avatar } from "../../assets";
+import "./navbar.css";
 
 const Navbar = ({ user, onLogout, isLoggedin }) => {
   const [profile, setProfile] = useState(false);
@@ -35,6 +35,16 @@ const Navbar = ({ user, onLogout, isLoggedin }) => {
         {user && <Link to="/workouts">My Workouts</Link>}
       </nav>
 
+      <img
+        src={hamburger}
+        alt=""
+        className="hamburger_menu"
+        onClick={() => {
+          setProfile((prevState) => !prevState);
+          console.log("Clicked");
+        }}
+      />
+
       {/* login */}
       {isLoggedin ? (
         <div className="user_profile">
@@ -46,6 +56,13 @@ const Navbar = ({ user, onLogout, isLoggedin }) => {
           />
           {profile && (
             <div className="user_profile-container">
+              {/* <nav className="mobile_navbar-links">
+                <Link to="/">Home</Link>
+                <Link to="/exercises">Exercises</Link>
+                <Link to="/membership">Membership</Link>
+                {user && <Link to="/workouts">My Workouts</Link>}
+              </nav> */}
+
               <Link
                 className="user_profile-link"
                 onClick={() => setProfile((prev) => !prev)}
