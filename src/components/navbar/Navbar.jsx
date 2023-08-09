@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { hamburger, logo } from "../../assets";
-import { avatar, logo } from "../../assets";
+import { hamburger, logo, avatar } from "../../assets";
 import "./navbar.css";
 
 const Navbar = ({ user, onLogout, isLoggedin }) => {
