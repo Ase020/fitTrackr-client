@@ -1,0 +1,46 @@
+.fitness_body-form {
+  border: 1px solid green;
+  flex: 2;
+}
+
+.fitness_form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 16px;
+}
+
+.fitness_input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.fitness_form-label {
+  color: #969ea0;
+}
+
+.fitness_form-input {
+  padding: 4px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+
+.fitness_form-btn {
+  background: transparent;
+  border: 1px solid #78ce91;
+  color: #78ce91;
+  width: fit-content;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 0 auto;
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+}
+
+.fitness_form-btn:hover {
+  background: #78ce91;
+  color: #fff;
+}

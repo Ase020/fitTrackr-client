@@ -1,3 +1,4 @@
+import { FitnessCard, FitnessRecord } from "../../components";
 import "./fitness.css";
 
 const Fitness = () => {
@@ -8,12 +9,19 @@ const Fitness = () => {
           Add & Track your fitness record
         </h4>
 
-        <p className="fitness_header-desc">Keep</p>
+        <p className="fitness_header-desc">
+          FitTrackr provides a highly convenient and user-friendly platform that
+          enables you to establish and monitor your fitness objectives with
+          unparalleled ease.
+        </p>
       </div>
 
       <div className="fitness_body-container">
-        <div className="fitness_body-form">Form</div>
-        <div className="fitness_body-list">List</div>
+        <FitnessCard />
+
+        <div className="fitness_body-list">
+          <FitnessRecord />
+        </div>
       </div>
     </main>
   );

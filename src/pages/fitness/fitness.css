@@ -1,2 +1,43 @@
 .fitness_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.fitness_header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid red;
+  padding: 16px;
+}
+
+.fitness_header-title {
+  font-size: 36px;
+  color: #969ea0;
+
+  background: linear-gradient(to bottom, #78ce91, #bbb);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fitness_header-desc {
+  text-align: center;
+  max-width: 550px;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.fitness_body-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.fitness_body-list {
+  flex: 3;
+  border: 1px solid green;
 }
