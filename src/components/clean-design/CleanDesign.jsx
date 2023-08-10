@@ -24,7 +24,7 @@ const CleanDesign = () => {
     <section className="clean_design-container">
       <div className="clean_design-intro">
         <div className="clean_design-logo">FitTrackr</div>
-        <div className="quotes-container"> {/* Add a container around Quotes */}
+        <div className="quotes-container">
           <Quotes />
         </div>
         <div className="clean_design-desc">
@@ -39,6 +39,7 @@ const CleanDesign = () => {
           </p>
         </div>
       </div>
+
       <div className="clean_design-design">
         <div className="design_desc-wrapper">
           {design.map((design) => (

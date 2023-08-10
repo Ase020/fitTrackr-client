@@ -72,6 +72,7 @@
   object-fit: cover;
 }
 
+
 .scroll-arrow-container {
   position: fixed;
   left: 50%;
@@ -126,4 +127,33 @@
 .arrows path.a3 { 
   animation-delay:0s;
   -webkit-animation-delay:0s;
+}
+
+@media (max-width: 768px) {
+  .hero_section-img {
+    display: none;
+  }
+
+  .hero_section-container {
+    padding: 24px;
+  }
+
+  .design_desc-wrapper {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero_section-intro {
+    font-size: 56px;
+  }
+
+  .endorsed_by-img-container {
+    flex-wrap: wrap;
+  }
+
+  .design_img-wrapper {
+    width: 100%;
+  }
+
 }
