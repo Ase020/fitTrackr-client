@@ -1,15 +1,22 @@
-import { Link } from "react-router-dom";
-import { logo } from "../../assets";
-import "./navbar.css";
+/* eslint-disable react/prop-types */
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { hamburger, logo, avatar } from "../../assets";
+import "./navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ user, onLogout, isLoggedin }) => {
   const [profile, setProfile] = useState(false);
-  const currentUser = {
-    name: "felix",
-    profile:
-      "https://images.pexels.com/photos/17751042/pexels-photo-17751042.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    fetch("https://fittrackr-8zow.onrender.com/logout", {
+      method: "DELETE",
+    }).then(() => onLogout());
+    setProfile(false);
+    console.log("logged out");
+    navigate("/login");
   };
+
   return (
     <header className="navbar-container">
       {/* logo */}
@@ -25,14 +32,23 @@ const Navbar = () => {
         <Link to="/">Home</Link>
         <Link to="/exercises">Exercises</Link>
         <Link to="/membership">Membership</Link>
-        <Link to="/contact">Contact Us</Link>
+        {user && <Link to="/workouts">My Workouts</Link>}
       </nav>
 
+      <img
+        src={hamburger}
+        alt=""
+        className="hamburger_menu"
+        onClick={() => {
+          setProfile((prevState) => !prevState);
+        }}
+      />
+
       {/* login */}
-      {currentUser ? (
+      {isLoggedin ? (
         <div className="user_profile">
           <img
-            src={currentUser.profile}
+            src={user.profile_image || avatar}
             alt=""
             className="user_profile-pic"
             onClick={() => setProfile((prevState) => !prevState)}
@@ -42,10 +58,36 @@ const Navbar = () => {
               <Link
                 className="user_profile-link"
                 onClick={() => setProfile((prev) => !prev)}
-                to="/profile"
+                to="/myprofile"
               >
-                My profile
+                {user?.username}
               </Link>
+              <Link
+                className="user_profile-link"
+                onClick={() => setProfile((prev) => !prev)}
+                to="/my-fitness"
+              >
+                My Fitness
+              </Link>
+              {user?.is_admin && (
+                <>
+                  <Link
+                    className="user_profile-link"
+                    onClick={() => setProfile((prev) => !prev)}
+                    to="/add-exercise"
+                  >
+                    Add Exercise
+                  </Link>
+
+                  <Link
+                    className="user_profile-link"
+                    onClick={() => setProfile((prev) => !prev)}
+                    to="/users"
+                  >
+                    Manage users
+                  </Link>
+                </>
+              )}
               <Link
                 className="user_profile-link"
                 onClick={() => setProfile((prev) => !prev)}
@@ -53,7 +95,9 @@ const Navbar = () => {
               >
                 Dashboard
               </Link>
-              <button className="user_profile-btn">Logout</button>
+              <button className="user_profile-btn" onClick={handleLogout}>
+                Logout
+              </button>
             </div>
           )}
         </div>

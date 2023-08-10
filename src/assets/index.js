@@ -12,11 +12,18 @@ import nb from "./nb.png";
 import espirit from "./espirit.png";
 import waterBottle from "./water-bottle.png";
 import weightPlate from "./weight-plate-dark.png";
-import resetImage from "./reset image.png"
+import resetImage from "./reset image.png";
 import exerciseGif from "./exercise.gif";
 import bodyPart from "./body_part.svg";
 import exerciseDesc from "./description.svg";
 import equipment from "./equipment.svg";
+import signUp from "./signup image.png";
+import googleIcon from "./google-icon.svg";
+import login1 from "./login1.png";
+import userPic from "./user-pic.png";
+import profilePic from "./profile-cover.jpg";
+import hamburger from "./hamburger-menu.svg";
+import avatar from "./user_avatar.svg";
 
 export {
   logo,
@@ -38,4 +45,11 @@ export {
   bodyPart,
   exerciseDesc,
   equipment,
+  signUp,
+  googleIcon,
+  login1,
+  profilePic,
+  userPic,
+  hamburger,
+  avatar,
 };

@@ -1,0 +1,41 @@
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(255, 255, 255, 0.15);
+  width: 50%;
+  padding: 40px 0;
+}
+.profile-pic {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.one-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.input {
+  border-radius: 6px;
+  padding: 12px 6px;
+  border: 1px solid lightgray;
+  outline: none;
+  font-size: 16px;
+  background-color: rgb(220, 219, 219);
+}
+.input:disabled {
+  /* background-color: rgb(153, 246, 170); */
+  background-color: transparent;
+}

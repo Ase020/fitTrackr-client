@@ -1,4 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { useContext } from "react";
+import { UserContext } from "./context/user";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import "./App.css";
@@ -12,14 +14,34 @@ import {
   Exercises,
   ExerciseDetails,
   Dashboard,
-  Profile,
+  Workout,
+  AddExercise,
+  Myprofile,
+  ManageUsers,
+  Fitness,
 } from "./pages";
 
 const App = () => {
+  const [user, setUser, isLoggedin, setIsLoggedin] = useContext(UserContext);
+
+  const handleLogin = (user) => {
+    setUser(user);
+    sessionStorage.setItem("user", JSON.stringify(user));
+    setIsLoggedin(true);
+  };
+
+  const handleLogout = () => {
+    setUser(null);
+    sessionStorage.removeItem("user");
+    setIsLoggedin(false);
+  };
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Layout />,
+      element: (
+        <Layout user={user} onLogout={handleLogout} isLoggedin={isLoggedin} />
+      ),
       children: [
         {
           path: "/",
@@ -27,11 +49,11 @@ const App = () => {
         },
         {
           path: "/login",
-          element: <Login />,
+          element: <Login onLogin={handleLogin} />,
         },
         {
           path: "/signup",
-          element: <Signup />,
+          element: <Signup onLogin={handleLogin} />,
         },
         {
           path: "/exercises",
@@ -49,13 +71,30 @@ const App = () => {
           path: "/dashboard",
           element: <Dashboard />,
         },
+
         {
-          path: "/profile",
-          element: <Profile />,
+          path: "/myprofile",
+          element: <Myprofile />,
+        },
+        {
+          path: "/add-exercise",
+          element: <AddExercise />,
+        },
+        {
+          path: "/workouts",
+          element: <Workout />,
         },
         {
           path: "/login/password_reset",
           element: <PasswordReset />,
+        },
+        {
+          path: "/users",
+          element: <ManageUsers />,
+        },
+        {
+          path: "/my-fitness",
+          element: <Fitness />,
         },
       ],
     },

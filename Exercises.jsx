@@ -1,11 +1,10 @@
 /* eslint-disable react/prop-types */
-// import React from 'react'
 
 function ExerciseCard({
-  imageUrl = 'https://images.everydayhealth.com/images/strength-training-health-benefits-1440x810.jpg',
-  exerciseName = 'Pushup',
-  target = 'Abs',
-  bodyPart = 'Arms',
+  imageUrl = "https://images.everydayhealth.com/images/strength-training-health-benefits-1440x810.jpg",
+  exerciseName = "Pushup",
+  target = "Abs",
+  bodyPart = "Arms",
 }) {
   return (
     <div className="exercise-card">

@@ -1,5 +1,5 @@
 .dashboard_container {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 16px 0;
   display: flex;
   flex-direction: column;
@@ -16,4 +16,58 @@
   font-size: 24px;
   color: #969ea0;
   font-weight: 600;
+}
+
+.dashboard_download-reports {
+  color: #e7ebec;
+  background: #3e4396;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  gap: 16px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.dashboard_report-section {
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dashboard_bmi_user-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.recent_workout_container {
+  flex: 1;
+  max-height: 400px;
+  overflow-y: scroll;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.recent_workout-header {
+  background: rgb(255, 255, 255, 0.15);
+  padding: 8px 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 16px;
+
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
 }

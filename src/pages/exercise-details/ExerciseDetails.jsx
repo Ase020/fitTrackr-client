@@ -1,5 +1,12 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useParams, useNavigate } from "react-router-dom";
 import { bodyPart, equipment, exerciseDesc, exerciseGif } from "../../assets";
 import "./exercise-details.css";
+import { useContext, useEffect, useState } from "react";
+import { Loader } from "../../components";
+import { UserContext } from "../../context/user";
+import { WorkoutContext } from "../../context/workouts";
 
 const RelatedExercise = () => (
   <div className="related_exercise-wrapper">
@@ -24,19 +31,114 @@ const RelatedExercise = () => (
 );
 
 const ExerciseDetails = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [workoutProgress, setWorkoutProgress] = useState("before");
+  const [loading, setLoading] = useState(false);
+  const [workoutName, setWorkoutName] = useState("");
+  const [targetReps, setTargetReps] = useState(0);
+  const [targetDuration, setTargetDuration] = useState(0);
+  const [repsAchieved, setRepsAchieved] = useState(0);
+  const [durationAchieved, setDurationAchieved] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [exercise, setExercise] = useState({});
+  const [user] = useContext(UserContext);
+  const [workouts, setWorkouts] = useContext(WorkoutContext);
+
+  useEffect(() => {
+    fetch(`https://fittrackr-8zow.onrender.com/exercises/${id}`)
+      .then((res) => {
+        if (res.ok) {
+          res.json().then(setExercise);
+        } else {
+          navigate("/login");
+        }
+      })
+
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [id]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    const formData = new FormData();
+    formData.append("name", workoutName);
+    formData.append("user_id", user?.id);
+    formData.append("exercise_id", exercise?.id);
+    formData.append("intensity_target", targetReps);
+    formData.append("time_target", targetDuration);
+    formData.append("intensity_achieved", repsAchieved);
+    formData.append("time_taken", durationAchieved);
+
+    try {
+      const res = await fetch(
+        `https://fittrackr-8zow.onrender.com/users/${user?.id}/workouts`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      if (res.ok) {
+        alert("Workout saved successfully!");
+        res.json().then((data) => {
+          setIsLoading(false);
+          console.log(data);
+          setWorkouts([...workouts, data]);
+        });
+        navigate("/workouts");
+      } else {
+        const data = await res.json();
+        setIsLoading(false);
+        console.log("Error1: " + data.errors);
+        navigate("/login");
+      }
+    } catch (error) {
+      console.log("Error2: ", error);
+    }
+  };
+
+  const startExercise = () => {
+    const confirmed = confirm("Start exercise?");
+
+    if (confirmed) {
+      setLoading(true);
+      setTimeout(() => {
+        setWorkoutProgress("achieved");
+        setLoading(false);
+      }, 3000);
+    } else {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="exercise_details-container">
-      <h5 className="exercise_details-title">Smith sprint lunge</h5>
+      <h5 className="exercise_details-title">{exercise?.name}</h5>
 
       <div className="exercise_details-body">
         <div className="exercise_details-img_container">
           <img
-            src={exerciseGif}
-            alt="exercise"
+            src={exercise?.image}
+            alt={exercise?.name}
             className="exercise_details-img"
           />
 
-          <button className="exercise_details-btn">Workout</button>
+          <button
+            className="exercise_details-btn"
+            style={
+              workoutProgress === "before"
+                ? { display: "inline" }
+                : { display: "none" }
+            }
+            onClick={() => setWorkoutProgress("target")}
+          >
+            Start workout
+          </button>
         </div>
 
         <div className="exercise_details-wrapper">
@@ -49,7 +151,8 @@ const ExerciseDetails = () => {
                 <p className="title-name">Equipment</p>
               </div>
               <div className="exercise-detail-desc">
-                Smith Machine Smith Machine Smith Machine Smith Machine
+                {exercise?.equipments?.length > 0 &&
+                  exercise.equipments[0].name}
               </div>
             </div>
 
@@ -58,7 +161,10 @@ const ExerciseDetails = () => {
                 <img src={bodyPart} alt="equipment" className="title-img" />
                 <p className="title-name">Body Part</p>
               </div>
-              <div className="exercise-detail-desc">Smith Machine</div>
+              <div className="exercise-detail-desc">
+                {exercise?.body_parts?.length > 0 &&
+                  exercise.body_parts[0].name}
+              </div>
             </div>
 
             <div className="exercise-detail-wrapper">
@@ -67,12 +173,9 @@ const ExerciseDetails = () => {
                 <p className="title-name">Description</p>
               </div>
               <div className="exercise-detail-desc">
-                Diamond Push-Up The diamond push-up variation targets the
-                triceps brachii.6 It is done with your hands close together and
-                the index fingers and thumbs of one hand touching the other
-                hand, making a diamond shape on the floor. You then do push-ups
-                with your hands touching the center of your chest and elbows
-                close to your sides during each rep.
+                <div
+                  dangerouslySetInnerHTML={{ __html: exercise?.description }}
+                />
               </div>
             </div>
           </div>
@@ -80,43 +183,90 @@ const ExerciseDetails = () => {
       </div>
 
       {/* Exercise target */}
-      <div className="exercise_target_set-container">
-        <p className="exercise_target-header">Set your target</p>
 
-        <form className="exercise_target-form">
-          <label className="set_taget-label">Reps</label>
-          <input
-            type="number"
-            min={0}
-            placeholder="reps"
-            className="set_target-input"
-          />
+      {loading ? (
+        <div className="loader_container">
+          <Loader />
+          <p>In progress...</p>
+        </div>
+      ) : (
+        <div
+          className="exercise_target_set-container"
+          style={
+            workoutProgress === "target"
+              ? { display: "inline" }
+              : { display: "none" }
+          }
+        >
+          <p className="exercise_target-header">Set your target</p>
 
-          <label className="set_taget-label">Duration(minutes)</label>
-          <input
-            type="number"
-            min={0}
-            placeholder="10 minutes"
-            className="set_target-input"
-          />
+          <form
+            className="exercise_target-form"
+            onSubmit={(e) => {
+              e.preventDefault();
+              startExercise();
+            }}
+          >
+            <label className="set_taget-label">Name</label>
+            <input
+              type="text"
+              placeholder={exercise?.name}
+              className="set_target-input"
+              value={workoutName}
+              onChange={(e) => setWorkoutName(e.target.value)}
+              required
+            />
 
-          <button type="submit" className="set_target-btn">
-            Start
-          </button>
-        </form>
-      </div>
+            <label className="set_taget-label">Reps</label>
+            <input
+              type="number"
+              min={0}
+              placeholder="reps"
+              className="set_target-input"
+              value={targetReps}
+              onChange={(e) => setTargetReps(e.target.value)}
+              required
+            />
+
+            <label className="set_taget-label">Duration(minutes)</label>
+            <input
+              type="number"
+              min={0}
+              placeholder="10 minutes"
+              className="set_target-input"
+              value={targetDuration}
+              onChange={(e) => setTargetDuration(e.target.value)}
+              required
+            />
+
+            <button type="submit" className="set_target-btn">
+              Start
+            </button>
+          </form>
+        </div>
+      )}
 
       {/* Exercise stats */}
-      <div className="exercise_target_set-container">
+      <div
+        className="exercise_target_set-container"
+        style={
+          workoutProgress === "achieved"
+            ? { display: "inline" }
+            : { display: "none" }
+        }
+      >
         <p className="exercise_target-header">How many have you achieved?</p>
 
-        <form className="exercise_target-form">
+        <form className="exercise_target-form" onSubmit={handleSubmit}>
           <label className="set_taget-label">Reps</label>
           <input
             type="number"
             min={0}
             placeholder="reps"
             className="set_target-input"
+            value={repsAchieved}
+            onChange={(e) => setRepsAchieved(e.target.value)}
+            required
           />
 
           <label className="set_taget-label">Duration(minutes)</label>
@@ -125,10 +275,13 @@ const ExerciseDetails = () => {
             min={0}
             placeholder="10 minutes"
             className="set_target-input"
+            value={durationAchieved}
+            onChange={(e) => setDurationAchieved(e.target.value)}
+            required
           />
 
           <button type="submit" className="set_target-btn">
-            Finish
+            {isLoading ? "Saving..." : "Finish"}
           </button>
         </form>
       </div>
