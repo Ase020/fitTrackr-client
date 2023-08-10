@@ -21,7 +21,7 @@ const UserRow = ({ user }) => {
   const handleEdit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    fetch(`http://localhost:3000/users/${user?.id}`, {
+    fetch(`https://fittrackr-8zow.onrender.com/users/${user?.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

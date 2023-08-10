@@ -10,7 +10,7 @@ export const FitnessesProvider = ({ children }) => {
   const [fitnesses, setFitnesses] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/users/${user?.id}/fitnesses`)
+    fetch(`https://fittrackr-8zow.onrender.com/users/${user?.id}/fitnesses`)
       .then((res) => {
         if (res.ok) {
           return res.json();

@@ -18,18 +18,6 @@ const Signup = ({ onLogin }) => {
 
   const navigate = useNavigate();
 
-  // const userObj = {
-  //   email,
-  //   username,
-  //   password,
-  //   password_confirmation: passwordConfirmation,
-  //   profile_image: profile,
-  //   gender,
-  //   dob,
-  //   weight,
-  //   height,
-  // };
-
   const formData = new FormData();
   formData.append("username", username);
   formData.append("email", email);
@@ -43,10 +31,8 @@ const Signup = ({ onLogin }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:3000/signup", {
+    fetch("https://fittrackr-8zow.onrender.com/signup", {
       method: "POST",
-      // headers: { "Content-Type": "application/json" },
-      // body: JSON.stringify(formData),
       body: formData,
     })
       .then((res) => {
@@ -68,7 +54,6 @@ const Signup = ({ onLogin }) => {
     <>
       {showPage === "signup1" ? (
         <Signup1
-          // onLogin={onLogin}
           email={email}
           setEmail={setEmail}
           password={password}

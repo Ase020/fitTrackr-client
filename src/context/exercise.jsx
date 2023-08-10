@@ -9,7 +9,7 @@ export const ExercisesProvider = ({ children }) => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("http://127.0.0.1:3000/exercises")
+    fetch("https://fittrackr-8zow.onrender.com/exercises")
       .then((res) => res.json())
       .then((data) => {
         setExercises(data);
