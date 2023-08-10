@@ -2,7 +2,7 @@
 import { useState } from "react";
 import "./fitnessCard.css";
 
-const FitnessCard = ({ userId }) => {
+const FitnessCard = ({ userId, fitnesses, setFitnesses }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (e) => {
@@ -33,6 +33,7 @@ const FitnessCard = ({ userId }) => {
       .then((data) => {
         alert("Fitness record saved successfully!");
         console.log(data);
+        setFitnesses([...fitnesses, data]);
       })
       .catch((error) => {
         console.error(error);

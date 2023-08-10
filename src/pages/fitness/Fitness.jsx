@@ -40,8 +40,6 @@ const Fitness = () => {
       });
   }, []);
 
-  console.log(fitnesses);
-
   return (
     <main className="fitness_container">
       <div className="fitness_header-container">
@@ -57,7 +55,11 @@ const Fitness = () => {
       </div>
 
       <div className="fitness_body-container">
-        <FitnessCard userId={user?.id} fitnesses={fitnesses} />
+        <FitnessCard
+          userId={user?.id}
+          fitnesses={fitnesses}
+          setFitnesses={setFitnesses}
+        />
 
         <div className="fitness_body-list">
           {fitnesses.length > 0 ? (
@@ -66,7 +68,7 @@ const Fitness = () => {
 
               <tbody className="fitness_tbody">
                 {fitnesses.map((fitness) => (
-                  <FitnessRecord key={fitness.key} fitness={fitness} />
+                  <FitnessRecord key={fitness.id} fitness={fitness} />
                 ))}
               </tbody>
             </table>
