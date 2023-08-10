@@ -11,6 +11,8 @@ import { default as Loader } from "./loader/Loader";
 import { default as Profile } from "./profile/Profile";
 import { default as Signup1 } from "./signup1/Signup1";
 import { default as UserRow } from "./user-row/UserRow";
+import { default as FitnessCard } from "./fitnessCard/FitnessCard";
+import { default as FitnessRecord } from "./fitnessRecord/FitnessRecord";
 
 export {
   Navbar,
@@ -26,4 +28,6 @@ export {
   Profile,
   Signup1,
   UserRow,
+  FitnessCard,
+  FitnessRecord,
 };
