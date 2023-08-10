@@ -38,7 +38,7 @@ const Fitness = () => {
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+  }, [fitnesses.length]);
 
   return (
     <main className="fitness_container">
