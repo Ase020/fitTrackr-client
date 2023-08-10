@@ -3,99 +3,34 @@ import DownloadIcon from "@mui/icons-material/Download";
 
 import "./dashboard.css";
 import { LineChartContainer, WorkoutCard } from "../../components";
-import { bmiData, weightData, waistData } from "../../constants";
 import {
   convertWorkoutData,
+  formatBMIData,
   formatWaistData,
+  formatWeightData,
   recentWorkoutsFn,
   topWorkoutFn,
 } from "../../utils";
 import { WorkoutContext } from "../../context/workouts";
+import { FitnessesContext } from "../../context/fitnesses";
 
 const Dashboard = () => {
   const [workouts] = useContext(WorkoutContext);
+  const [fitnesses] = useContext(FitnessesContext);
 
   const workoutData = convertWorkoutData(workouts);
 
   const topWorkouts = topWorkoutFn(workoutData);
   const recentWorkouts = recentWorkoutsFn(workoutData);
 
-  const fitData = [
-    {
-      id: 6,
-      user_id: 11,
-      weight: 50,
-      height: 140,
-      waist_size: 36,
-      created_at: "2023-08-09T21:15:41.526Z",
-    },
-    {
-      id: 7,
-      user_id: 11,
-      weight: 51,
-      height: 140,
-      waist_size: 36,
-      created_at: "2023-08-10T07:11:04.035Z",
-    },
-    {
-      id: 8,
-      user_id: 11,
-      weight: 52,
-      height: 141,
-      waist_size: 36,
-      created_at: "2023-08-10T07:15:16.488Z",
-    },
-    {
-      id: 9,
-      user_id: 11,
-      weight: 50,
-      height: 150,
-      waist_size: 34,
-      created_at: "2023-08-10T07:27:33.901Z",
-    },
-    {
-      id: 10,
-      user_id: 11,
-      weight: 48,
-      height: 150,
-      waist_size: 34,
-      created_at: "2023-08-10T07:29:42.946Z",
-    },
-    {
-      id: 11,
-      user_id: 11,
-      weight: 46,
-      height: 150,
-      waist_size: 33,
-      created_at: "2023-08-10T07:32:28.466Z",
-    },
-    {
-      id: 12,
-      user_id: 11,
-      weight: 50,
-      height: 142,
-      waist_size: 35,
-      created_at: "2023-08-10T07:35:47.040Z",
-    },
-    {
-      id: 13,
-      user_id: 11,
-      weight: 46,
-      height: 150,
-      waist_size: 33,
-      created_at: "2023-08-10T07:37:02.244Z",
-    },
-    {
-      id: 14,
-      user_id: 11,
-      weight: 46,
-      height: 150,
-      waist_size: 33,
-      created_at: "2023-08-10T07:44:41.334Z",
-    },
-  ];
+  // weight Data
+  const weightData = formatWeightData(fitnesses);
 
-  const trialData = formatWaistData(fitData);
+  // waist Data
+  const waistData = formatWaistData(fitnesses);
+
+  // bmi Data
+  const bMIData = formatBMIData(fitnesses);
 
   return (
     <div className="dashboard_container">
@@ -137,7 +72,7 @@ const Dashboard = () => {
         {/* Row 2 */}
         <div className="dashboard_bmi_user-container">
           <LineChartContainer
-            data={bmiData}
+            data={bMIData}
             parameter="BMI"
             paramValue={19.87}
           />
@@ -164,7 +99,7 @@ const Dashboard = () => {
         {/* Row 3 */}
         <div className="dashboard_bmi_user-container">
           <LineChartContainer
-            data={trialData}
+            data={waistData}
             parameter="Waist size"
             paramValue={36}
           />
