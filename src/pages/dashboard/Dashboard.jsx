@@ -103,24 +103,6 @@ const Dashboard = () => {
             parameter="Waist size"
             paramValue={36}
           />
-
-          {/* <div className="recent_workout_container">
-            <h5 className="recent_workout-header">top workouts</h5>
-
-            {topWorkouts.length > 0 ? (
-              topWorkouts.map((workout) => (
-                <WorkoutCard
-                  key={workout.id}
-                  exerciseName={workout.exercise}
-                  workoutName={workout.name}
-                  date={workout.date}
-                  progress={workout.percentage}
-                />
-              ))
-            ) : (
-              <p>no data</p>
-            )}
-          </div> */}
         </div>
       </div>
     </div>

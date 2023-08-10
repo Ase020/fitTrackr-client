@@ -41,7 +41,6 @@ const Navbar = ({ user, onLogout, isLoggedin }) => {
         className="hamburger_menu"
         onClick={() => {
           setProfile((prevState) => !prevState);
-          console.log("Clicked");
         }}
       />
 
@@ -56,13 +55,6 @@ const Navbar = ({ user, onLogout, isLoggedin }) => {
           />
           {profile && (
             <div className="user_profile-container">
-              {/* <nav className="mobile_navbar-links">
-                <Link to="/">Home</Link>
-                <Link to="/exercises">Exercises</Link>
-                <Link to="/membership">Membership</Link>
-                {user && <Link to="/workouts">My Workouts</Link>}
-              </nav> */}
-
               <Link
                 className="user_profile-link"
                 onClick={() => setProfile((prev) => !prev)}

@@ -1,6 +1,5 @@
-// import React from 'react';
-import { useState } from 'react';
-import './myprofile.css';
+import { useState } from "react";
+import "./myprofile.css";
 const Myprofile = () => {
   const [editMode, setEditMode] = useState(false);
   return (
@@ -44,7 +43,7 @@ const Myprofile = () => {
             <input className="input" placeholder="178" disabled={!editMode} />
           </div>
           <button onClick={() => setEditMode(!editMode)}>
-            {editMode ? 'Save' : 'Edit'}
+            {editMode ? "Save" : "Edit"}
           </button>
         </div>
       </div>

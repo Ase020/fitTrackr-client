@@ -1,10 +1,3 @@
-// const today = new Date();
-
-// const year = today.getFullYear();
-// const month = String(today.getMonth() + 1).padStart(2, "0");
-// const day = String(today.getDate()).padStart(2, "0");
-
-// export const formattedDate = `${year}-${month}-${day}`;
 export const columns = [
   {
     field: "id",
@@ -81,13 +74,13 @@ export function convertWorkoutData(data) {
 export function topWorkoutFn(data) {
   data.sort((a, b) => b.percentage - a.percentage);
 
-  return data.slice(0, 10);
+  return data.slice(0, 5);
 }
 
 // recent workouts
 export function recentWorkoutsFn(data) {
   data.sort((a, b) => new Date(b.date) - new Date(a.date));
-  return data.slice(0, 5);
+  return data.slice(0, 10);
 }
 
 // age calculator
