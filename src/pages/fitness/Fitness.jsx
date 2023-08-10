@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { FitnessCard, FitnessRecord } from "../../components";
 import "./fitness.css";
 import { UserContext } from "../../context/user";
+import { FitnessesContext } from "../../context/fitnesses";
 
 const TableHead = () => (
   <thead className="thead fitness_thead">
@@ -20,25 +21,7 @@ const TableHead = () => (
 
 const Fitness = () => {
   const [user] = useContext(UserContext);
-  const [fitnesses, setFitnesses] = useState([]);
-
-  useEffect(() => {
-    fetch(`http://localhost:3000/users/${user?.id}/fitnesses`)
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        } else {
-          throw new Error("Failed to fetch fitnesses!");
-        }
-      })
-      .then((data) => {
-        setFitnesses(data);
-        console.log(data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, [fitnesses.length]);
+  const [fitnesses, setFitnesses] = useContext(FitnessesContext);
 
   return (
     <main className="fitness_container">
@@ -62,7 +45,7 @@ const Fitness = () => {
         />
 
         <div className="fitness_body-list">
-          {fitnesses.length > 0 ? (
+          {fitnesses?.length > 0 ? (
             <table className="manage_users_table-container">
               <TableHead />
 

@@ -6,13 +6,16 @@ import "./index.css";
 import { ExercisesProvider } from "./context/exercise.jsx";
 import { UserProvider } from "./context/user.jsx";
 import { WorkoutProvider } from "./context/workouts.jsx";
+import { FitnessesProvider } from "./context/fitnesses.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <UserProvider>
       <ExercisesProvider>
         <WorkoutProvider>
-          <App />
+          <FitnessesProvider>
+            <App />
+          </FitnessesProvider>
         </WorkoutProvider>
       </ExercisesProvider>
     </UserProvider>

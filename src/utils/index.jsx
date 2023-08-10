@@ -138,3 +138,57 @@ export function bMIInterpreter(bmi) {
       return "Obese Class III (Very Severe)";
   }
 }
+
+// format weight data
+export const formatWeightData = (fitness) => {
+  const formattedFitnessData = fitness.map((entry) => ({
+    x: entry.created_at.substring(0, 10),
+    y: entry.weight,
+  }));
+
+  const fitnessData = [
+    {
+      id: "Weight",
+      color: "hsl(1, 70%, 50%)",
+      data: formattedFitnessData,
+    },
+  ];
+
+  return fitnessData;
+};
+
+// format waist size data
+export const formatWaistData = (fitness) => {
+  const formattedFitnessData = fitness.map((entry) => ({
+    x: entry.created_at.substring(0, 10),
+    y: entry.waist_size,
+  }));
+
+  const fitnessData = [
+    {
+      id: "Waist size",
+      color: "hsl(1, 70%, 50%)",
+      data: formattedFitnessData,
+    },
+  ];
+
+  return fitnessData;
+};
+
+// format BMI data
+export const formatBMIData = (fitness) => {
+  const formattedFitnessData = fitness.map((entry) => ({
+    x: entry.created_at.substring(0, 10),
+    y: bMICalculator(entry.height, entry.weight),
+  }));
+
+  const fitnessData = [
+    {
+      id: "Weight",
+      color: "hsl(1, 70%, 50%)",
+      data: formattedFitnessData,
+    },
+  ];
+
+  return fitnessData;
+};
