@@ -9,7 +9,12 @@ export const ExercisesProvider = ({ children }) => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://fittrackr-8zow.onrender.com/exercises")
+    fetch("https://fittrackr-8zow.onrender.com/exercises", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         setExercises(data);

@@ -8,7 +8,6 @@ import { WorkoutContext } from "../../context/workouts";
 
 const Workout = () => {
   const [workouts] = useContext(WorkoutContext);
-  console.log("Workout: ", workouts);
 
   const workoutData = convertWorkoutData(workouts);
 
