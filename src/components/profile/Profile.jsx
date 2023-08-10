@@ -15,6 +15,7 @@ const Profile = ({
   height,
   setHeight,
   handleSubmit = { handleSubmit },
+  isLoading,
 }) => {
   const handleChange = (e) => {
     e.persist();
@@ -110,7 +111,7 @@ const Profile = ({
             </div>
 
             <button type="submit" className="form_submit-btn">
-              Save
+              {isLoading ? "Saving..." : "Save"}
             </button>
           </form>
         </div>

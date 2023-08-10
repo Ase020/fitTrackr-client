@@ -15,6 +15,7 @@ const Signup = ({ onLogin }) => {
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
   const [showPage, setShowPage] = useState("signup1");
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -31,6 +32,8 @@ const Signup = ({ onLogin }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
+
     fetch("https://fittrackr-8zow.onrender.com/signup", {
       method: "POST",
       body: formData,
@@ -47,6 +50,9 @@ const Signup = ({ onLogin }) => {
       })
       .catch((error) => {
         console.error("Signup failed:", error);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }
 
@@ -77,6 +83,7 @@ const Signup = ({ onLogin }) => {
           height={height}
           setHeight={setHeight}
           handleSubmit={handleSubmit}
+          isLoading={isLoading}
         />
       )}
     </>
