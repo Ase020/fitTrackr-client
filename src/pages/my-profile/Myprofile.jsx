@@ -6,7 +6,6 @@ const Myprofile = () => {
   const [user] = useContext(UserContext);
   const [editMode, setEditMode] = useState(false);
 
-  console.log(user);
   return (
     <div className="profile-wrapper">
       <div className="profile-container">
