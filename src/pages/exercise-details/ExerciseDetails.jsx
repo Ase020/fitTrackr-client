@@ -44,9 +44,7 @@ const ExerciseDetails = () => {
   const [user] = useContext(UserContext);
 
   useEffect(() => {
-    fetch(`https://fittrackr-8zow.onrender.com/exercises/${id}`, {
-      credentials: "include",
-    })
+    fetch(`https://fittrackr-8zow.onrender.com/exercises/${id}`)
       .then((res) => {
         if (res.ok) {
           res.json().then(setExercise);
