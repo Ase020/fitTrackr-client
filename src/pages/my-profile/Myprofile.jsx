@@ -1,20 +1,26 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./myprofile.css";
+import { UserContext } from "../../context/user";
+
 const Myprofile = () => {
+  const [user] = useContext(UserContext);
   const [editMode, setEditMode] = useState(false);
+
+  console.log(user);
   return (
     <div className="profile-wrapper">
       <div className="profile-container">
         <img
           className="profile-pic"
-          src="https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510_1280.jpg"
+          src={user?.profile_image}
+          alt={user?.username}
         />
         <div className="profile-info">
           <div className="one-info">
             <p>Username</p>
             <input
               className="input"
-              placeholder="milhan"
+              placeholder={user?.username}
               disabled={!editMode}
             />
           </div>
@@ -22,7 +28,7 @@ const Myprofile = () => {
             <p>Gender</p>
             <input
               className="input"
-              placeholder="female"
+              placeholder={user?.gender}
               disabled={!editMode}
             />
           </div>
@@ -30,19 +36,27 @@ const Myprofile = () => {
             <p>Date Of Birth</p>
             <input
               className="input"
-              placeholder="28/7/2003"
+              placeholder={user?.dob}
               disabled={!editMode}
             />
           </div>
           <div className="one-info">
             <p>Weight (kgs)</p>
-            <input className="input" placeholder="75" disabled={!editMode} />
+            <input
+              className="input"
+              placeholder={user?.weight}
+              disabled={!editMode}
+            />
           </div>
           <div className="one-info">
             <p>Height (cms)</p>
-            <input className="input" placeholder="178" disabled={!editMode} />
+            <input
+              className="input"
+              placeholder={user?.height}
+              disabled={!editMode}
+            />
           </div>
-          <button onClick={() => setEditMode(!editMode)}>
+          <button onClick={() => setEditMode(!editMode)} className="login-btn">
             {editMode ? "Save" : "Edit"}
           </button>
         </div>
