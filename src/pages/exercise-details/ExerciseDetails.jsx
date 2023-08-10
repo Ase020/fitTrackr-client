@@ -6,6 +6,7 @@ import "./exercise-details.css";
 import { useContext, useEffect, useState } from "react";
 import { Loader } from "../../components";
 import { UserContext } from "../../context/user";
+import { WorkoutContext } from "../../context/workouts";
 
 const RelatedExercise = () => (
   <div className="related_exercise-wrapper">
@@ -42,6 +43,7 @@ const ExerciseDetails = () => {
 
   const [exercise, setExercise] = useState({});
   const [user] = useContext(UserContext);
+  const [workouts, setWorkouts] = useContext(WorkoutContext);
 
   useEffect(() => {
     fetch(`https://fittrackr-8zow.onrender.com/exercises/${id}`)
@@ -58,7 +60,6 @@ const ExerciseDetails = () => {
       });
   }, [id]);
 
-  // console.log(exercise);
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -84,8 +85,9 @@ const ExerciseDetails = () => {
         alert("Workout saved successfully!");
         res.json().then((data) => {
           console.log(data);
+          setWorkouts([...workouts, data]);
         });
-        navigate("/exercises");
+        navigate("/workouts");
       } else {
         const data = await res.json();
         console.log("Error1: " + data.errors);
