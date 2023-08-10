@@ -58,7 +58,7 @@ export function formatDate(dateString) {
 }
 
 export function convertWorkoutData(data) {
-  const convertedData = data.map((item) => {
+  const convertedData = data?.map((item) => {
     const percentage = (item.intensity_achieved / item.intensity_target) * 100;
     const date = formatDate(item.created_at).toString();
 

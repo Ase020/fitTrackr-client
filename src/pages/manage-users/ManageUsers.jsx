@@ -23,7 +23,7 @@ const ManageUsers = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/users")
+    fetch("https://fittrackr-8zow.onrender.com/users")
       .then((res) => res.json())
       .then(setUsers)
       .catch((err) => console.log("Error: ", err));

@@ -9,7 +9,7 @@ import { WorkoutContext } from "../../context/workouts";
 const Workout = () => {
   const [workouts] = useContext(WorkoutContext);
 
-  const data = convertWorkoutData(workouts);
+  const workoutData = convertWorkoutData(workouts);
 
   return (
     <div className="workout_container">
@@ -21,7 +21,7 @@ const Workout = () => {
       </div>
       <div className="workout_table-container">
         {workouts.length > 0 ? (
-          <DataGrid rows={data} columns={columns} checkboxSelection />
+          <DataGrid rows={workoutData} columns={columns} checkboxSelection />
         ) : (
           <div className="no_workout_container">
             <h2 className="no_workout-header">No workouts records</h2>

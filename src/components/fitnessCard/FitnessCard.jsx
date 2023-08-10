@@ -16,7 +16,7 @@ const FitnessCard = ({ userId, fitnesses, setFitnesses }) => {
     };
 
     console.log(fitnessObj);
-    fetch(`http://localhost:3000/users/${userId}/fitnesses`, {
+    fetch(`https://fittrackr-8zow.onrender.com/users/${userId}/fitnesses`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

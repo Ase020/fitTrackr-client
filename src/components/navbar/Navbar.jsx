@@ -9,7 +9,7 @@ const Navbar = ({ user, onLogout, isLoggedin }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    fetch("http://localhost:3000/logout", {
+    fetch("https://fittrackr-8zow.onrender.com/logout", {
       method: "DELETE",
     }).then(() => onLogout());
     setProfile(false);

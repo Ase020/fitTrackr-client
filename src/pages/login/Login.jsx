@@ -14,7 +14,7 @@ const Login = ({ onLogin }) => {
     e.preventDefault();
 
     // Send login request to the server
-    fetch("http://localhost:3000/login", {
+    fetch("https://fittrackr-8zow.onrender.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
