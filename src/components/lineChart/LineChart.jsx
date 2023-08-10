@@ -67,7 +67,9 @@ const LineChart = ({ data, parameter }) => {
         tickValues: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: parameter === "Weight" && "Kgs",
+        legend:
+          (parameter === "Weight" && "Kgs") ||
+          (parameter === "Waist size" && "Inches"),
         legendOffset: -40,
         legendPosition: "middle",
       }}
