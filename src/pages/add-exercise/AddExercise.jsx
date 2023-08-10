@@ -1,10 +1,8 @@
 import { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-// import { Image } from "cloudinary-react";
 
 import "./add-exercise.css";
-// import { useNavigate } from "react-router-dom";
 
 const AddExercise = () => {
   const [name, setName] = useState("");
@@ -12,9 +10,6 @@ const AddExercise = () => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
-  // const [isSaved, setIsSaved] = useState(false);
-
-  // const navigate = useNavigate();
 
   const handleChange = (e) => {
     e.persist();
@@ -38,10 +33,8 @@ const AddExercise = () => {
       });
 
       if (res.ok) {
-        console.log("exercise saved successfully!");
+        console.log("Exercise saved successfully!");
         setLoading(false);
-        // setIsSaved(true);
-        // navigate("/exercises");
       } else {
         const data = await res.json();
         setLoading(false);

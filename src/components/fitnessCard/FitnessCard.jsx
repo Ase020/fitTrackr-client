@@ -15,7 +15,6 @@ const FitnessCard = ({ userId, fitnesses, setFitnesses }) => {
       height: e.target[2].value,
     };
 
-    console.log(fitnessObj);
     fetch(`https://fittrackr-8zow.onrender.com/users/${userId}/fitnesses`, {
       method: "POST",
       headers: {

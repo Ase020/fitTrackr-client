@@ -9,9 +9,11 @@ const Login = ({ onLogin }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
 
     // Send login request to the server
     fetch("https://fittrackr-8zow.onrender.com/login", {
@@ -33,6 +35,9 @@ const Login = ({ onLogin }) => {
       })
       .catch((error) => {
         alert(error.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }
   return (
@@ -71,7 +76,7 @@ const Login = ({ onLogin }) => {
               />
             </div>
             <button type="submit" className="login-btn">
-              Log In
+              {isLoading ? "Logging in..." : "Log In"}
             </button>
           </form>
           <p className="have-account">

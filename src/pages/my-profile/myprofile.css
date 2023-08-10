@@ -28,11 +28,14 @@
   gap: 10px;
 }
 .input {
-  border-radius: 10px;
-  padding: 5px;
+  border-radius: 6px;
+  padding: 12px 6px;
+  border: 1px solid lightgray;
+  outline: none;
+  font-size: 16px;
+  background-color: rgb(220, 219, 219);
 }
 .input:disabled {
-  border-radius: 10px;
-  padding: 5px;
-  background-color: aqua;
+  /* background-color: rgb(153, 246, 170); */
+  background-color: transparent;
 }

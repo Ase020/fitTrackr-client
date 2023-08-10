@@ -40,6 +40,7 @@ const ExerciseDetails = () => {
   const [targetDuration, setTargetDuration] = useState(0);
   const [repsAchieved, setRepsAchieved] = useState(0);
   const [durationAchieved, setDurationAchieved] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [exercise, setExercise] = useState({});
   const [user] = useContext(UserContext);
@@ -62,6 +63,7 @@ const ExerciseDetails = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     const formData = new FormData();
     formData.append("name", workoutName);
@@ -84,12 +86,14 @@ const ExerciseDetails = () => {
       if (res.ok) {
         alert("Workout saved successfully!");
         res.json().then((data) => {
+          setIsLoading(false);
           console.log(data);
           setWorkouts([...workouts, data]);
         });
         navigate("/workouts");
       } else {
         const data = await res.json();
+        setIsLoading(false);
         console.log("Error1: " + data.errors);
         navigate("/login");
       }
@@ -277,7 +281,7 @@ const ExerciseDetails = () => {
           />
 
           <button type="submit" className="set_target-btn">
-            Finish
+            {isLoading ? "Saving..." : "Finish"}
           </button>
         </form>
       </div>

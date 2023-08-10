@@ -1,11 +1,9 @@
 /* eslint-disable react/prop-types */
-// import { useNavigate } from "react-router-dom";
 
 import { googleIcon, signUp } from "../../assets";
 import "./signup1.css";
 
 const Signup1 = ({
-  // onLogin,
   email,
   setEmail,
   password,
@@ -14,25 +12,6 @@ const Signup1 = ({
   setPasswordConfirmation,
   setShowPage,
 }) => {
-  // const navigate = useNavigate();
-
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  //   fetch("https://fittrackr-8zow.onrender.com/signup", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({
-  //       email: email,
-  //       password: password,
-  //       password_confirmation: passwordConfirmation,
-  //     }),
-  //   })
-  //     .then((res) => res.json())
-  //     .then(onLogin);
-
-  //   navigate("/login");
-  // }
-
   return (
     <div className="signup-container">
       <div className="signup-wrapper">
