@@ -7,12 +7,13 @@ import {
   convertWorkoutData,
   formatBMIData,
   formatWaistData,
-  formatWeightData,
+  // formatWeightData,
   recentWorkoutsFn,
   topWorkoutFn,
 } from "../../utils";
 import { WorkoutContext } from "../../context/workouts";
 import { FitnessesContext } from "../../context/fitnesses";
+import { weightData } from "../../constants";
 
 const Dashboard = () => {
   const [workouts] = useContext(WorkoutContext);
@@ -24,7 +25,7 @@ const Dashboard = () => {
   const recentWorkouts = recentWorkoutsFn(workoutData);
 
   // weight Data
-  const weightData = formatWeightData(fitnesses);
+  // const weightData = formatWeightData(fitnesses);
 
   // waist Data
   const waistData = formatWaistData(fitnesses);
